@@ -19,5 +19,10 @@ namespace MetroTools
         {
             InitializeComponent();
         }
+
+        private void ccCustLookupButton_Click(object sender, EventArgs e)
+        {
+            string 
+        }
     }
 }
