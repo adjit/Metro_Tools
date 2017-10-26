@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MetroToolsForm));
             this.MetroTabControl = new System.Windows.Forms.TabControl();
             this.invoiceLookupTab = new System.Windows.Forms.TabPage();
-            this.openInvoiceTab = new System.Windows.Forms.TabPage();
+            this.getInvoiceGroupBox = new System.Windows.Forms.GroupBox();
+            this.openStandaloneInvoice = new System.Windows.Forms.Button();
+            this.invoiceNumberInput = new System.Windows.Forms.TextBox();
+            this.invoiceListGroupBox = new System.Windows.Forms.GroupBox();
+            this.invoiceList = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.openInvoice = new System.Windows.Forms.Button();
             this.lookupGroupBox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.trackingNumberInput = new System.Windows.Forms.TextBox();
@@ -39,18 +45,13 @@
             this.invoiceLookupButton = new System.Windows.Forms.Button();
             this.serialNumberInput = new System.Windows.Forms.TextBox();
             this.snLabel = new System.Windows.Forms.Label();
-            this.invoiceListGroupBox = new System.Windows.Forms.GroupBox();
-            this.invoiceList = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.openInvoice = new System.Windows.Forms.Button();
-            this.getInvoiceGroupBox = new System.Windows.Forms.GroupBox();
-            this.openStandaloneInvoice = new System.Windows.Forms.Button();
-            this.invoiceNumberInput = new System.Windows.Forms.TextBox();
+            this.openInvoiceTab = new System.Windows.Forms.TabPage();
+            this.lastCreditCardTab = new System.Windows.Forms.TabPage();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
-            this.lookupGroupBox.SuspendLayout();
-            this.invoiceListGroupBox.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
+            this.invoiceListGroupBox.SuspendLayout();
+            this.lookupGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -60,6 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MetroTabControl.Controls.Add(this.invoiceLookupTab);
             this.MetroTabControl.Controls.Add(this.openInvoiceTab);
+            this.MetroTabControl.Controls.Add(this.lastCreditCardTab);
             this.MetroTabControl.Location = new System.Drawing.Point(0, 0);
             this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 345);
             this.MetroTabControl.Name = "MetroTabControl";
@@ -80,15 +82,90 @@
             this.invoiceLookupTab.Text = "Invoice Lookup";
             this.invoiceLookupTab.UseVisualStyleBackColor = true;
             // 
-            // openInvoiceTab
+            // getInvoiceGroupBox
             // 
-            this.openInvoiceTab.Location = new System.Drawing.Point(4, 22);
-            this.openInvoiceTab.Name = "openInvoiceTab";
-            this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.openInvoiceTab.Size = new System.Drawing.Size(292, 319);
-            this.openInvoiceTab.TabIndex = 1;
-            this.openInvoiceTab.Text = "Open Invoice Report";
-            this.openInvoiceTab.UseVisualStyleBackColor = true;
+            this.getInvoiceGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
+            this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
+            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 262);
+            this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
+            this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
+            this.getInvoiceGroupBox.TabIndex = 12;
+            this.getInvoiceGroupBox.TabStop = false;
+            this.getInvoiceGroupBox.Text = "Get Specific Invoice";
+            // 
+            // openStandaloneInvoice
+            // 
+            this.openStandaloneInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.openStandaloneInvoice.Enabled = false;
+            this.openStandaloneInvoice.Location = new System.Drawing.Point(177, 17);
+            this.openStandaloneInvoice.Name = "openStandaloneInvoice";
+            this.openStandaloneInvoice.Size = new System.Drawing.Size(92, 23);
+            this.openStandaloneInvoice.TabIndex = 1;
+            this.openStandaloneInvoice.Text = "Open Invoice";
+            this.openStandaloneInvoice.UseVisualStyleBackColor = true;
+            // 
+            // invoiceNumberInput
+            // 
+            this.invoiceNumberInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invoiceNumberInput.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.invoiceNumberInput.Location = new System.Drawing.Point(6, 19);
+            this.invoiceNumberInput.Name = "invoiceNumberInput";
+            this.invoiceNumberInput.Size = new System.Drawing.Size(165, 20);
+            this.invoiceNumberInput.TabIndex = 3;
+            // 
+            // invoiceListGroupBox
+            // 
+            this.invoiceListGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invoiceListGroupBox.Controls.Add(this.invoiceList);
+            this.invoiceListGroupBox.Controls.Add(this.label2);
+            this.invoiceListGroupBox.Controls.Add(this.openInvoice);
+            this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
+            this.invoiceListGroupBox.Name = "invoiceListGroupBox";
+            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 128);
+            this.invoiceListGroupBox.TabIndex = 11;
+            this.invoiceListGroupBox.TabStop = false;
+            this.invoiceListGroupBox.Text = "Invoice LIst";
+            // 
+            // invoiceList
+            // 
+            this.invoiceList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.invoiceList.FormattingEnabled = true;
+            this.invoiceList.Location = new System.Drawing.Point(6, 19);
+            this.invoiceList.Name = "invoiceList";
+            this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.invoiceList.Size = new System.Drawing.Size(165, 95);
+            this.invoiceList.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(179, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 26);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Opens all selected\r\ninvoices";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // openInvoice
+            // 
+            this.openInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.openInvoice.AutoSize = true;
+            this.openInvoice.Enabled = false;
+            this.openInvoice.Location = new System.Drawing.Point(179, 19);
+            this.openInvoice.Name = "openInvoice";
+            this.openInvoice.Size = new System.Drawing.Size(92, 23);
+            this.openInvoice.TabIndex = 4;
+            this.openInvoice.Text = "Open Invoice(s)";
+            this.openInvoice.UseVisualStyleBackColor = true;
             // 
             // lookupGroupBox
             // 
@@ -163,90 +240,24 @@
             this.snLabel.TabIndex = 0;
             this.snLabel.Text = "Serial Number:";
             // 
-            // invoiceListGroupBox
+            // openInvoiceTab
             // 
-            this.invoiceListGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.invoiceListGroupBox.Controls.Add(this.invoiceList);
-            this.invoiceListGroupBox.Controls.Add(this.label2);
-            this.invoiceListGroupBox.Controls.Add(this.openInvoice);
-            this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
-            this.invoiceListGroupBox.Name = "invoiceListGroupBox";
-            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 128);
-            this.invoiceListGroupBox.TabIndex = 11;
-            this.invoiceListGroupBox.TabStop = false;
-            this.invoiceListGroupBox.Text = "Invoice LIst";
+            this.openInvoiceTab.Location = new System.Drawing.Point(4, 22);
+            this.openInvoiceTab.Name = "openInvoiceTab";
+            this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
+            this.openInvoiceTab.Size = new System.Drawing.Size(292, 319);
+            this.openInvoiceTab.TabIndex = 1;
+            this.openInvoiceTab.Text = "Open Invoice Report";
+            this.openInvoiceTab.UseVisualStyleBackColor = true;
             // 
-            // invoiceList
+            // lastCreditCardTab
             // 
-            this.invoiceList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.invoiceList.FormattingEnabled = true;
-            this.invoiceList.Location = new System.Drawing.Point(6, 19);
-            this.invoiceList.Name = "invoiceList";
-            this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.invoiceList.Size = new System.Drawing.Size(165, 95);
-            this.invoiceList.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(179, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 26);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Opens all selected\r\ninvoices";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // openInvoice
-            // 
-            this.openInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.openInvoice.AutoSize = true;
-            this.openInvoice.Enabled = false;
-            this.openInvoice.Location = new System.Drawing.Point(179, 19);
-            this.openInvoice.Name = "openInvoice";
-            this.openInvoice.Size = new System.Drawing.Size(92, 23);
-            this.openInvoice.TabIndex = 4;
-            this.openInvoice.Text = "Open Invoice(s)";
-            this.openInvoice.UseVisualStyleBackColor = true;
-            // 
-            // getInvoiceGroupBox
-            // 
-            this.getInvoiceGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
-            this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
-            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 262);
-            this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
-            this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
-            this.getInvoiceGroupBox.TabIndex = 12;
-            this.getInvoiceGroupBox.TabStop = false;
-            this.getInvoiceGroupBox.Text = "Get Specific Invoice";
-            // 
-            // openStandaloneInvoice
-            // 
-            this.openStandaloneInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.openStandaloneInvoice.Enabled = false;
-            this.openStandaloneInvoice.Location = new System.Drawing.Point(177, 17);
-            this.openStandaloneInvoice.Name = "openStandaloneInvoice";
-            this.openStandaloneInvoice.Size = new System.Drawing.Size(92, 23);
-            this.openStandaloneInvoice.TabIndex = 1;
-            this.openStandaloneInvoice.Text = "Open Invoice";
-            this.openStandaloneInvoice.UseVisualStyleBackColor = true;
-            // 
-            // invoiceNumberInput
-            // 
-            this.invoiceNumberInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.invoiceNumberInput.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.invoiceNumberInput.Location = new System.Drawing.Point(6, 19);
-            this.invoiceNumberInput.Name = "invoiceNumberInput";
-            this.invoiceNumberInput.Size = new System.Drawing.Size(165, 20);
-            this.invoiceNumberInput.TabIndex = 3;
+            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 22);
+            this.lastCreditCardTab.Name = "lastCreditCardTab";
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 319);
+            this.lastCreditCardTab.TabIndex = 2;
+            this.lastCreditCardTab.Text = "Last Credit Card";
+            this.lastCreditCardTab.UseVisualStyleBackColor = true;
             // 
             // MetroToolsForm
             // 
@@ -260,12 +271,12 @@
             this.Text = "Metro Tools";
             this.MetroTabControl.ResumeLayout(false);
             this.invoiceLookupTab.ResumeLayout(false);
-            this.lookupGroupBox.ResumeLayout(false);
-            this.lookupGroupBox.PerformLayout();
-            this.invoiceListGroupBox.ResumeLayout(false);
-            this.invoiceListGroupBox.PerformLayout();
             this.getInvoiceGroupBox.ResumeLayout(false);
             this.getInvoiceGroupBox.PerformLayout();
+            this.invoiceListGroupBox.ResumeLayout(false);
+            this.invoiceListGroupBox.PerformLayout();
+            this.lookupGroupBox.ResumeLayout(false);
+            this.lookupGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -289,6 +300,7 @@
         private System.Windows.Forms.Button invoiceLookupButton;
         private System.Windows.Forms.TextBox serialNumberInput;
         private System.Windows.Forms.Label snLabel;
+        private System.Windows.Forms.TabPage lastCreditCardTab;
     }
 }
 
