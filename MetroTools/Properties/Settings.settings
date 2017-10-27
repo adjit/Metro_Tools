@@ -1,7 +1,30 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MetroTools.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="_defaultFormHeight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">380</Value>
+    </Setting>
+    <Setting Name="_defaultFormWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">315</Value>
+    </Setting>
+    <Setting Name="_defaultTabHeight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">345</Value>
+    </Setting>
+    <Setting Name="_defaultTabWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="_ccTabHeight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="_ccTabWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="_ccFormHeight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">380</Value>
+    </Setting>
+    <Setting Name="_ccFormWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">515</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

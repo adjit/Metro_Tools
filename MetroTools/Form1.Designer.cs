@@ -47,20 +47,21 @@
             this.snLabel = new System.Windows.Forms.Label();
             this.openInvoiceTab = new System.Windows.Forms.TabPage();
             this.lastCreditCardTab = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.custNumberLabel = new System.Windows.Forms.Label();
-            this.ccCustLookupButton = new System.Windows.Forms.Button();
             this.ccLookupList = new System.Windows.Forms.GroupBox();
-            this.ccListBox = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ccCustLookupButton = new System.Windows.Forms.Button();
             this.ccCustomerNumber = new System.Windows.Forms.TextBox();
+            this.custNumberLabel = new System.Windows.Forms.Label();
+            this.ccDataGridView = new System.Windows.Forms.DataGridView();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
             this.invoiceListGroupBox.SuspendLayout();
             this.lookupGroupBox.SuspendLayout();
             this.lastCreditCardTab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.ccLookupList.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -77,6 +78,7 @@
             this.MetroTabControl.SelectedIndex = 0;
             this.MetroTabControl.Size = new System.Drawing.Size(300, 345);
             this.MetroTabControl.TabIndex = 0;
+            this.MetroTabControl.SelectedIndexChanged += new System.EventHandler(this.MetroTabControl_SelectedIndexChanged);
             // 
             // invoiceLookupTab
             // 
@@ -230,6 +232,7 @@
             this.invoiceLookupButton.TabIndex = 2;
             this.invoiceLookupButton.Text = "Ok";
             this.invoiceLookupButton.UseVisualStyleBackColor = true;
+            this.invoiceLookupButton.Click += new System.EventHandler(this.invoiceLookupButton_Click);
             // 
             // serialNumberInput
             // 
@@ -270,6 +273,19 @@
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
             // 
+            // ccLookupList
+            // 
+            this.ccLookupList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ccLookupList.Controls.Add(this.ccDataGridView);
+            this.ccLookupList.Location = new System.Drawing.Point(9, 103);
+            this.ccLookupList.Name = "ccLookupList";
+            this.ccLookupList.Size = new System.Drawing.Size(274, 213);
+            this.ccLookupList.TabIndex = 1;
+            this.ccLookupList.TabStop = false;
+            this.ccLookupList.Text = "Last Credit Card List";
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -284,17 +300,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Lookup";
             // 
-            // custNumberLabel
-            // 
-            this.custNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.custNumberLabel.AutoSize = true;
-            this.custNumberLabel.Location = new System.Drawing.Point(6, 27);
-            this.custNumberLabel.Name = "custNumberLabel";
-            this.custNumberLabel.Size = new System.Drawing.Size(91, 13);
-            this.custNumberLabel.TabIndex = 0;
-            this.custNumberLabel.Text = "Customer Number";
-            // 
             // ccCustLookupButton
             // 
             this.ccCustLookupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -306,30 +311,6 @@
             this.ccCustLookupButton.UseVisualStyleBackColor = true;
             this.ccCustLookupButton.Click += new System.EventHandler(this.ccCustLookupButton_Click);
             // 
-            // ccLookupList
-            // 
-            this.ccLookupList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccLookupList.Controls.Add(this.ccListBox);
-            this.ccLookupList.Location = new System.Drawing.Point(9, 103);
-            this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(274, 213);
-            this.ccLookupList.TabIndex = 1;
-            this.ccLookupList.TabStop = false;
-            this.ccLookupList.Text = "Last Credit Card List";
-            // 
-            // ccListBox
-            // 
-            this.ccListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccListBox.FormattingEnabled = true;
-            this.ccListBox.Location = new System.Drawing.Point(8, 19);
-            this.ccListBox.Name = "ccListBox";
-            this.ccListBox.Size = new System.Drawing.Size(260, 186);
-            this.ccListBox.TabIndex = 0;
-            // 
             // ccCustomerNumber
             // 
             this.ccCustomerNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -338,6 +319,28 @@
             this.ccCustomerNumber.Name = "ccCustomerNumber";
             this.ccCustomerNumber.Size = new System.Drawing.Size(166, 20);
             this.ccCustomerNumber.TabIndex = 1;
+            // 
+            // custNumberLabel
+            // 
+            this.custNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.custNumberLabel.AutoSize = true;
+            this.custNumberLabel.Location = new System.Drawing.Point(6, 27);
+            this.custNumberLabel.Name = "custNumberLabel";
+            this.custNumberLabel.Size = new System.Drawing.Size(94, 13);
+            this.custNumberLabel.TabIndex = 0;
+            this.custNumberLabel.Text = "Customer Number:";
+            // 
+            // ccDataGridView
+            // 
+            this.ccDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
+            this.ccDataGridView.Name = "ccDataGridView";
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 188);
+            this.ccDataGridView.TabIndex = 0;
             // 
             // MetroToolsForm
             // 
@@ -358,9 +361,10 @@
             this.lookupGroupBox.ResumeLayout(false);
             this.lookupGroupBox.PerformLayout();
             this.lastCreditCardTab.ResumeLayout(false);
+            this.ccLookupList.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.ccLookupList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,8 +393,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button ccCustLookupButton;
         private System.Windows.Forms.Label custNumberLabel;
-        private System.Windows.Forms.ListBox ccListBox;
         private System.Windows.Forms.TextBox ccCustomerNumber;
+        private System.Windows.Forms.DataGridView ccDataGridView;
     }
 }
 
