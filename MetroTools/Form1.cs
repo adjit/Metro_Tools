@@ -52,6 +52,8 @@ namespace MetroTools
 
         private void invoiceLookupButton_Click(object sender, EventArgs e)
         {
+            invoiceList.Items.Clear();
+
             string query;
 
             if(serialNumberInput.TextLength > 0 && trackingNumberInput.TextLength > 0)
@@ -73,6 +75,18 @@ namespace MetroTools
             {
                 MessageBox.Show("Please input a value into either field");
                 return;
+            }
+
+            InvoiceLookup ilp = new InvoiceLookup(query);
+            string[] invoices = ilp.getInvoiceNumbers();
+
+            if (invoices.Length == 0) invoiceList.Items.Add("No Invoices Found");
+            else
+            {
+                for (int i = 0; i < invoices.Length; i++)
+                {
+                    invoiceList.Items.Add(invoices[i]);
+                }
             }
         }
     }

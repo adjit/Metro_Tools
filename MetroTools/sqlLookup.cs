@@ -13,7 +13,6 @@ namespace MetroTools
     class sqlLookup
     {
         private SqlConnection dbConnection;
-        private SqlDataAdapter sda;
         private SqlCommand cmd;
         private DataTable _data;
         public String Query { get; }
