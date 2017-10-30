@@ -16,6 +16,14 @@ namespace MetroTools
         {
             sqlLookup slp = new sqlLookup(string.Format(Properties.Resources.ccQuery, custNum));
             _data = slp.getDataTable();
+
+            if(_data.Rows.Count == 0)
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ERROR");
+                dt.Rows.Add(new object[] { "No Rows Found" });
+                _data = dt;
+            }
         }
 
         public DataTable getDataTable()

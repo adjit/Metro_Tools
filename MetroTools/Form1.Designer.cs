@@ -46,22 +46,25 @@
             this.serialNumberInput = new System.Windows.Forms.TextBox();
             this.snLabel = new System.Windows.Forms.Label();
             this.openInvoiceTab = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lastCreditCardTab = new System.Windows.Forms.TabPage();
             this.ccLookupList = new System.Windows.Forms.GroupBox();
+            this.ccDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ccCustLookupButton = new System.Windows.Forms.Button();
             this.ccCustomerNumber = new System.Windows.Forms.TextBox();
             this.custNumberLabel = new System.Windows.Forms.Label();
-            this.ccDataGridView = new System.Windows.Forms.DataGridView();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
             this.invoiceListGroupBox.SuspendLayout();
             this.lookupGroupBox.SuspendLayout();
+            this.openInvoiceTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.lastCreditCardTab.SuspendLayout();
             this.ccLookupList.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -116,16 +119,20 @@
             this.openStandaloneInvoice.TabIndex = 1;
             this.openStandaloneInvoice.Text = "Open Invoice";
             this.openStandaloneInvoice.UseVisualStyleBackColor = true;
+            this.openStandaloneInvoice.Click += new System.EventHandler(this.openStandaloneInvoice_Click);
             // 
             // invoiceNumberInput
             // 
             this.invoiceNumberInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.invoiceNumberInput.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.invoiceNumberInput.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.invoiceNumberInput.Location = new System.Drawing.Point(6, 19);
+            this.invoiceNumberInput.MaxLength = 7;
             this.invoiceNumberInput.Name = "invoiceNumberInput";
             this.invoiceNumberInput.Size = new System.Drawing.Size(165, 20);
             this.invoiceNumberInput.TabIndex = 3;
+            this.invoiceNumberInput.TextChanged += new System.EventHandler(this.invoiceNumberInput_TextChanged);
             // 
             // invoiceListGroupBox
             // 
@@ -177,6 +184,7 @@
             this.openInvoice.TabIndex = 4;
             this.openInvoice.Text = "Open Invoice(s)";
             this.openInvoice.UseVisualStyleBackColor = true;
+            this.openInvoice.Click += new System.EventHandler(this.openInvoice_Click);
             // 
             // lookupGroupBox
             // 
@@ -254,6 +262,7 @@
             // 
             // openInvoiceTab
             // 
+            this.openInvoiceTab.Controls.Add(this.pictureBox1);
             this.openInvoiceTab.Location = new System.Drawing.Point(4, 22);
             this.openInvoiceTab.Name = "openInvoiceTab";
             this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
@@ -261,6 +270,16 @@
             this.openInvoiceTab.TabIndex = 1;
             this.openInvoiceTab.Text = "Open Invoice Report";
             this.openInvoiceTab.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MetroTools.Properties.Resources.UnderConstruction_PS;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(274, 203);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lastCreditCardTab
             // 
@@ -285,6 +304,17 @@
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
+            // 
+            // ccDataGridView
+            // 
+            this.ccDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
+            this.ccDataGridView.Name = "ccDataGridView";
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 188);
+            this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -315,7 +345,9 @@
             // 
             this.ccCustomerNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ccCustomerNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ccCustomerNumber.Location = new System.Drawing.Point(103, 24);
+            this.ccCustomerNumber.MaxLength = 7;
             this.ccCustomerNumber.Name = "ccCustomerNumber";
             this.ccCustomerNumber.Size = new System.Drawing.Size(166, 20);
             this.ccCustomerNumber.TabIndex = 1;
@@ -330,17 +362,6 @@
             this.custNumberLabel.Size = new System.Drawing.Size(94, 13);
             this.custNumberLabel.TabIndex = 0;
             this.custNumberLabel.Text = "Customer Number:";
-            // 
-            // ccDataGridView
-            // 
-            this.ccDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
-            this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(260, 188);
-            this.ccDataGridView.TabIndex = 0;
             // 
             // MetroToolsForm
             // 
@@ -360,11 +381,13 @@
             this.invoiceListGroupBox.PerformLayout();
             this.lookupGroupBox.ResumeLayout(false);
             this.lookupGroupBox.PerformLayout();
+            this.openInvoiceTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.lastCreditCardTab.ResumeLayout(false);
             this.ccLookupList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,6 +418,7 @@
         private System.Windows.Forms.Label custNumberLabel;
         private System.Windows.Forms.TextBox ccCustomerNumber;
         private System.Windows.Forms.DataGridView ccDataGridView;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

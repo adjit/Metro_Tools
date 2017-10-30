@@ -99,5 +99,25 @@ namespace MetroTools.Properties {
                 return ResourceManager.GetString("trxQuery", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UnderConstruction_PS {
+            get {
+                object obj = ResourceManager.GetObject("UnderConstruction-PS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UnderConstruction2 {
+            get {
+                object obj = ResourceManager.GetObject("UnderConstruction2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

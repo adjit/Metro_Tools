@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Metro;
 
 
 namespace MetroTools
@@ -18,6 +19,7 @@ namespace MetroTools
         public MetroToolsForm()
         {
             InitializeComponent();
+            openStandaloneInvoice.Enabled = false;
         }
 
         private void ccCustLookupButton_Click(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace MetroTools
         private void invoiceLookupButton_Click(object sender, EventArgs e)
         {
             invoiceList.Items.Clear();
+            openInvoice.Enabled = false;
 
             string query;
 
@@ -83,11 +86,33 @@ namespace MetroTools
             if (invoices.Length == 0) invoiceList.Items.Add("No Invoices Found");
             else
             {
+                openInvoice.Enabled = true;
+
                 for (int i = 0; i < invoices.Length; i++)
                 {
-                    invoiceList.Items.Add(invoices[i]);
+                    invoiceList.Items.Add(invoices[i].Trim());
                 }
             }
+
+            invoiceList.SelectedIndex = 0;
+        }
+
+        private void invoiceNumberInput_TextChanged(object sender, EventArgs e)
+        {
+            if (invoiceNumberInput.TextLength == invoiceNumberInput.MaxLength) openStandaloneInvoice.Enabled = true;
+            else openStandaloneInvoice.Enabled = false;
+        }
+
+        private void openStandaloneInvoice_Click(object sender, EventArgs e)
+        {
+            Invoices.Open(invoiceNumberInput.Text);
+        }
+
+        private void openInvoice_Click(object sender, EventArgs e)
+        {
+            ListBox.SelectedObjectCollection soc = invoiceList.SelectedItems;
+
+            for (int i = 0; i < soc.Count; i++) Invoices.Open(soc[i].ToString());
         }
     }
 }

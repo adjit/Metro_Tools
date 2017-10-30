@@ -27,7 +27,6 @@ namespace MetroTools
             cmd = new SqlCommand(Query, dbConnection);
             cmd.CommandType = CommandType.Text;
             _data = new DataTable();
-
             _data.Load(cmd.ExecuteReader());
 
             dbConnection.Close();
