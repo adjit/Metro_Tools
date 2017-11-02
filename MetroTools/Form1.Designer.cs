@@ -347,10 +347,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ccCustomerNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ccCustomerNumber.Location = new System.Drawing.Point(103, 24);
-            this.ccCustomerNumber.MaxLength = 7;
+            this.ccCustomerNumber.MaxLength = 10;
             this.ccCustomerNumber.Name = "ccCustomerNumber";
             this.ccCustomerNumber.Size = new System.Drawing.Size(166, 20);
             this.ccCustomerNumber.TabIndex = 1;
+            this.ccCustomerNumber.TextChanged += new System.EventHandler(this.ccCustomerNumber_TextChanged);
             // 
             // custNumberLabel
             // 

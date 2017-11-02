@@ -20,6 +20,7 @@ namespace MetroTools
         {
             InitializeComponent();
             openStandaloneInvoice.Enabled = false;
+            ccCustLookupButton.Enabled = false;
         }
 
         private void ccCustLookupButton_Click(object sender, EventArgs e)
@@ -113,6 +114,11 @@ namespace MetroTools
             ListBox.SelectedObjectCollection soc = invoiceList.SelectedItems;
 
             for (int i = 0; i < soc.Count; i++) Invoices.Open(soc[i].ToString());
+        }
+
+        private void ccCustomerNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (ccCustomerNumber.TextLength >= 7) ccCustLookupButton.Enabled = true;
         }
     }
 }
