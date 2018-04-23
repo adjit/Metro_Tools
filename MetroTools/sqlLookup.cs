@@ -19,6 +19,16 @@ namespace MetroTools
 
         public sqlLookup(string query)
         {
+            try
+            {
+                string connection = System.IO.File.ReadAllText(@"\\METRO-FILE1\Metropolitan Sales Docs\1-Deployment\dbConnect\dbConnection");
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show("Unable to get connection string for database.");
+                return;
+            }
+
             dbConnection = new SqlConnection("Data Source=METRO-GP1;user id=sa;password=frx12gpa;persist security info=True;Integrated Security=False;Initial Catalog=METRO;persistsecurityinfo=True;");
             Query = query;
 
