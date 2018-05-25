@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Metro Tools</ProductName>
     <PublisherName>Metropolitan Sales</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,8 +65,8 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InvoiceLibrary">
-      <HintPath>..\..\OpenInvoice\OpenInvoice\InvoiceLibrary.DLL</HintPath>
+    <Reference Include="Metro">
+      <HintPath>..\..\OpenInvoice\OpenInvoice\bin\Debug\Metro.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ccLookup.cs" />
+    <Compile Include="CustExport.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +124,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustExportLookup.sql" />
+    <Content Include="CustExportReferenceLookup.sql" />
     <Content Include="Last12mCC.sql" />
     <Content Include="LastCC.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

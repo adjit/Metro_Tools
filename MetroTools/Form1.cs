@@ -120,5 +120,10 @@ namespace MetroTools
         {
             if (ccCustomerNumber.TextLength >= 7) ccCustLookupButton.Enabled = true;
         }
+
+        private void custExportBtn_Click(object sender, EventArgs e)
+        {
+            CustExport ce = new CustExport(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
+        }
     }
 }

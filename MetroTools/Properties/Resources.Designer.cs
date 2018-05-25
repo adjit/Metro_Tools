@@ -83,6 +83,63 @@ namespace MetroTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select
+        ///	tr.SOPNUMBE as &apos;Invoice Number&apos;,
+        ///	tr.ITEMNMBR as &apos;Product Number&apos;,
+        ///	tr.ITEMDESC as &apos;Product Description&apos;,
+        ///	tr.UNITPRCE as &apos;Unit Price&apos;,
+        ///	tr.XTNDPRCE as &apos;Extended Price&apos;,
+        ///	tx.Tracking_Number,
+        ///	shv.[Delivery Description],
+        ///	isnull(st.CMMTTEXT, &apos;No Serial Number&apos;) as &apos;Serial Numbers&apos;
+        ///From
+        ///	Metro.dbo.SOP30200 th,
+        ///	Metro.dbo.SOP10107 tx,
+        ///	StarShip.dbo.ShipmentHeaderView shv,
+        ///	Metro.dbo.SOP30300 tr
+        ///
+        ///	Left Join Metro.dbo.SOP10202 st
+        ///	on	tr.SOPNUMBE = st.SOPNUMBE AND
+        ///		tr.LNITMSEQ = st.LNITM [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string custExportQuery {
+            get {
+                return ResourceManager.GetString("custExportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select
+        ///	tr.SOPNUMBE,
+        ///	tr.ITEMNMBR,
+        ///	tr.ITEMDESC,
+        ///	tr.UNITPRCE,
+        ///	tr.XTNDPRCE,
+        ///	st.CMMTTEXT
+        ///From
+        ///	Metro.dbo.SOP30200 th,
+        ///	Metro.dbo.SOP30300 tr
+        ///
+        ///	Left Join Metro.dbo.SOP10202 st
+        ///	on	tr.SOPNUMBE = st.SOPNUMBE AND
+        ///		tr.LNITMSEQ = st.LNITMSEQ
+        ///
+        ///Where
+        ///	th.CUSTNMBR = &apos;{0}&apos; AND
+        ///	th.DOCDATE between &apos;{1}&apos; and &apos;{2}&apos; AND
+        ///	th.SOPTYPE = 3 AND
+        ///	tr.SOPNUMBE = th.SOPNUMBE AND 
+        ///	tr.XTNDPRCE &gt; 0
+        ///
+        ///Order by SOPNUMBE.
+        /// </summary>
+        internal static string custReferenceExportQuery {
+            get {
+                return ResourceManager.GetString("custReferenceExportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select * From SOP10202 Where CMMTTEXT like &apos;%{0}%&apos; and SOPTYPE=3.
         /// </summary>
         internal static string serialQuery {

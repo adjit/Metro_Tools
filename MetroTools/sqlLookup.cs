@@ -19,9 +19,11 @@ namespace MetroTools
 
         public sqlLookup(string query)
         {
+            string connection;
+
             try
             {
-                string connection = System.IO.File.ReadAllText(@"\\METRO-FILE1\Metropolitan Sales Docs\1-Deployment\dbConnect\dbConnection");
+                connection = System.IO.File.ReadAllText(@"\\METRO-FILE1\Metropolitan Sales Docs\1-Deployment\dbConnect\dbConnection");
             }
             catch (Exception e)
             {
@@ -29,12 +31,13 @@ namespace MetroTools
                 return;
             }
 
-            dbConnection = new SqlConnection("Data Source=METRO-GP1;user id=sa;password=frx12gpa;persist security info=True;Integrated Security=False;Initial Catalog=METRO;persistsecurityinfo=True;");
+            dbConnection = new SqlConnection(connection);
             Query = query;
 
             dbConnection.Open();
 
             cmd = new SqlCommand(Query, dbConnection);
+            
             cmd.CommandType = CommandType.Text;
             _data = new DataTable();
             _data.Load(cmd.ExecuteReader());
