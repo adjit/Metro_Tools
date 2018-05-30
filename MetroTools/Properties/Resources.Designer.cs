@@ -85,6 +85,7 @@ namespace MetroTools.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Select
         ///	tr.SOPNUMBE as &apos;Invoice Number&apos;,
+        ///	tr.QUANTITY as &apos;Qty&apos;,
         ///	tr.ITEMNMBR as &apos;Product Number&apos;,
         ///	tr.ITEMDESC as &apos;Product Description&apos;,
         ///	tr.UNITPRCE as &apos;Unit Price&apos;,
@@ -100,7 +101,7 @@ namespace MetroTools.Properties {
         ///
         ///	Left Join Metro.dbo.SOP10202 st
         ///	on	tr.SOPNUMBE = st.SOPNUMBE AND
-        ///		tr.LNITMSEQ = st.LNITM [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string custExportQuery {
             get {
@@ -111,6 +112,7 @@ namespace MetroTools.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Select
         ///	tr.SOPNUMBE,
+        ///	tr.QUANTITY as &apos;Qty&apos;,
         ///	tr.ITEMNMBR,
         ///	tr.ITEMDESC,
         ///	tr.UNITPRCE,

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,13 +125,17 @@ namespace MetroTools
 
         private async void custExportBtn_Click(object sender, EventArgs e)
         {
+            progressBar.Visible = true;
+            progressBar.Value = 0;
+            progressLabel.Text = "0%";
             var progress = new Progress<int>(percent =>
             {
                 progressBar.Value = percent;
                 progressLabel.Text = percent.ToString() + "%";
+                //Console.WriteLine(percent);
             });
 
-            CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
+            //CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
             await Task.Run(() => CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value, progress));
 
             //            CustExport ce = new CustExport(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);

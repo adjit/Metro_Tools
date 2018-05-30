@@ -319,7 +319,7 @@
             this.ccLookupList.Controls.Add(this.ccDataGridView);
             this.ccLookupList.Location = new System.Drawing.Point(9, 103);
             this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(511, 213);
+            this.ccLookupList.Size = new System.Drawing.Size(274, 186);
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
@@ -332,7 +332,7 @@
             this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
             this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(497, 188);
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 161);
             this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
@@ -344,7 +344,7 @@
             this.groupBox1.Controls.Add(this.custNumberLabel);
             this.groupBox1.Location = new System.Drawing.Point(8, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(512, 84);
+            this.groupBox1.Size = new System.Drawing.Size(275, 84);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Lookup";
@@ -352,7 +352,7 @@
             // ccCustLookupButton
             // 
             this.ccCustLookupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccCustLookupButton.Location = new System.Drawing.Point(431, 50);
+            this.ccCustLookupButton.Location = new System.Drawing.Point(194, 50);
             this.ccCustLookupButton.Name = "ccCustLookupButton";
             this.ccCustLookupButton.Size = new System.Drawing.Size(75, 23);
             this.ccCustLookupButton.TabIndex = 2;
@@ -368,7 +368,7 @@
             this.ccCustomerNumber.Location = new System.Drawing.Point(103, 24);
             this.ccCustomerNumber.MaxLength = 10;
             this.ccCustomerNumber.Name = "ccCustomerNumber";
-            this.ccCustomerNumber.Size = new System.Drawing.Size(403, 20);
+            this.ccCustomerNumber.Size = new System.Drawing.Size(166, 20);
             this.ccCustomerNumber.TabIndex = 1;
             this.ccCustomerNumber.TextChanged += new System.EventHandler(this.ccCustomerNumber_TextChanged);
             // 

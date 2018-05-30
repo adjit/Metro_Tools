@@ -29,13 +29,24 @@ namespace MetroTools
             string initialQuery = Properties.Resources.custExportQuery;
             string comparatorQuery = Properties.Resources.custReferenceExportQuery;
 
+            progress.Report(10);
+
             initialQuery = string.Format(initialQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
             comparatorQuery = string.Format(comparatorQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
 
+            progress.Report(20);
+
             DataTable dti = Database.sqlLookup(initialQuery);
+
+            progress.Report(30);
+
             DataTable dtc = Database.sqlLookup(comparatorQuery);
 
-            ExcelM.Export(_fillInCompare(dti, dtc), progress);
+            progress.Report(40);
+
+            ExcelM.Export(_fillInCompare(dti, dtc));
+
+            progress.Report(100);
         }
 
         private static DataTable _fillInCompare(DataTable initialTable, DataTable comparatorTable)
@@ -58,17 +69,18 @@ namespace MetroTools
 
             for(int i = 0; i < comparatorTable.Rows.Count; i++)
             {
-                invoiceNum = comparatorTable.Rows[i][0].ToString();
+                invoiceNum = comparatorTable.Rows[i][(int)ReferenceColumn.InvoiceNumber].ToString();
 
                 if(!parsedInvoices.ContainsKey(invoiceNum))
                 {
                     _invoiceToTrack itr = new _invoiceToTrack();
                     itr.invoiceNum = invoiceNum;
-                    itr.itemNumber = comparatorTable.Rows[i][1].ToString();
-                    itr.itemDescription = comparatorTable.Rows[i][2].ToString();
-                    itr.unitPrice = Convert.ToInt32(comparatorTable.Rows[i][3]);
-                    itr.extendedPrice = Convert.ToInt32(comparatorTable.Rows[i][4]);
-                    itr.serialNumbers = comparatorTable.Rows[i][5].ToString();
+                    itr.quantity = Convert.ToInt32(comparatorTable.Rows[i][(int)ReferenceColumn.Quantity]);
+                    itr.itemNumber = comparatorTable.Rows[i][(int)ReferenceColumn.ItemNumber].ToString();
+                    itr.itemDescription = comparatorTable.Rows[i][(int)ReferenceColumn.ItemDescription].ToString();
+                    itr.unitPrice = Convert.ToInt32(comparatorTable.Rows[i][(int)ReferenceColumn.UnitPrice]);
+                    itr.extendedPrice = Convert.ToInt32(comparatorTable.Rows[i][(int)ReferenceColumn.ExtendedPrice]);
+                    itr.serialNumbers = comparatorTable.Rows[i][(int)ReferenceColumn.SerialNumbers].ToString();
                     lookupInvoices.Add(itr);
                 }
             }
@@ -83,14 +95,15 @@ namespace MetroTools
                 {
                     DataRow ndr = initialTable.NewRow();
                     
-                    ndr[0] = lookupInvoices[i].invoiceNum;
-                    ndr[1] = lookupInvoices[i].itemNumber;
-                    ndr[2] = lookupInvoices[i].itemDescription;
-                    ndr[3] = lookupInvoices[i].unitPrice;
-                    ndr[4] = lookupInvoices[i].extendedPrice;
-                    ndr[5] = trackingTable.Rows[0][2].ToString();
-                    ndr[6] = "N/A";
-                    ndr[7] = lookupInvoices[i].serialNumbers;
+                    ndr[(int)ExcelColumn.InvoiceNumber] = lookupInvoices[i].invoiceNum;
+                    ndr[(int)ExcelColumn.Quantity] = lookupInvoices[i].quantity;
+                    ndr[(int)ExcelColumn.ItemNumber] = lookupInvoices[i].itemNumber;
+                    ndr[(int)ExcelColumn.ItemDescription] = lookupInvoices[i].itemDescription;
+                    ndr[(int)ExcelColumn.UnitPrice] = lookupInvoices[i].unitPrice;
+                    ndr[(int)ExcelColumn.ExtendedPrice] = lookupInvoices[i].extendedPrice;
+                    ndr[(int)ExcelColumn.TrackingNumber] = trackingTable.Rows[0][2].ToString();
+                    ndr[(int)ExcelColumn.TrackingInfo] = "N/A";
+                    ndr[(int)ExcelColumn.SerialNumbers] = lookupInvoices[i].serialNumbers;
 
                     initialTable.Rows.Add(ndr);
                 }
@@ -99,9 +112,34 @@ namespace MetroTools
             return initialTable;
         }
 
+        private enum ReferenceColumn
+        {
+            InvoiceNumber,
+            Quantity,
+            ItemNumber,
+            ItemDescription,
+            UnitPrice,
+            ExtendedPrice,
+            SerialNumbers
+        }
+
+        private enum ExcelColumn
+        {
+            InvoiceNumber,
+            Quantity,
+            ItemNumber,
+            ItemDescription,
+            UnitPrice,
+            ExtendedPrice,
+            TrackingNumber,
+            TrackingInfo,
+            SerialNumbers
+        }
+
         private struct _invoiceToTrack
         {
             public string invoiceNum;
+            public int quantity;
             public string itemNumber;
             public string itemDescription;
             public int unitPrice;
