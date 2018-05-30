@@ -140,6 +140,21 @@ namespace MetroTools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select TOP 1 *
+        ///From
+        ///	Metro.dbo.SOP10107 tx
+        ///Where
+        ///	tx.SOPNUMBE = &apos;{0}&apos; AND
+        ///	tx.SOPTYPE = 3
+        ///Order by tx.DEX_ROW_ID.
+        /// </summary>
+        internal static string invoiceTrxQuery {
+            get {
+                return ResourceManager.GetString("invoiceTrxQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select * From SOP10202 Where CMMTTEXT like &apos;%{0}%&apos; and SOPTYPE=3.
         /// </summary>
         internal static string serialQuery {

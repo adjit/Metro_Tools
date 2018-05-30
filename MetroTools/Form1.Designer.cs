@@ -54,16 +54,19 @@
             this.ccCustLookupButton = new System.Windows.Forms.Button();
             this.ccCustomerNumber = new System.Windows.Forms.TextBox();
             this.custNumberLabel = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.custExportTab = new System.Windows.Forms.TabPage();
+            this.exportGroup = new System.Windows.Forms.GroupBox();
+            this.progressLabel = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.custExportBtn = new System.Windows.Forms.Button();
+            this.dateRangeLookupGroup = new System.Windows.Forms.GroupBox();
+            this.exportEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.exportStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.customerExportLookup = new System.Windows.Forms.GroupBox();
             this.custExportNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateRangeLookupGroup = new System.Windows.Forms.GroupBox();
-            this.custExportBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.exportStartDate = new System.Windows.Forms.DateTimePicker();
-            this.exportEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
@@ -75,9 +78,10 @@
             this.ccLookupList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.customerExportLookup.SuspendLayout();
+            this.custExportTab.SuspendLayout();
+            this.exportGroup.SuspendLayout();
             this.dateRangeLookupGroup.SuspendLayout();
+            this.customerExportLookup.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -88,9 +92,10 @@
             this.MetroTabControl.Controls.Add(this.invoiceLookupTab);
             this.MetroTabControl.Controls.Add(this.openInvoiceTab);
             this.MetroTabControl.Controls.Add(this.lastCreditCardTab);
-            this.MetroTabControl.Controls.Add(this.tabPage1);
+            this.MetroTabControl.Controls.Add(this.custExportTab);
             this.MetroTabControl.Location = new System.Drawing.Point(0, 0);
             this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 345);
+            this.MetroTabControl.Multiline = true;
             this.MetroTabControl.Name = "MetroTabControl";
             this.MetroTabControl.SelectedIndex = 0;
             this.MetroTabControl.Size = new System.Drawing.Size(300, 345);
@@ -102,10 +107,10 @@
             this.invoiceLookupTab.Controls.Add(this.getInvoiceGroupBox);
             this.invoiceLookupTab.Controls.Add(this.invoiceListGroupBox);
             this.invoiceLookupTab.Controls.Add(this.lookupGroupBox);
-            this.invoiceLookupTab.Location = new System.Drawing.Point(4, 22);
+            this.invoiceLookupTab.Location = new System.Drawing.Point(4, 40);
             this.invoiceLookupTab.Name = "invoiceLookupTab";
             this.invoiceLookupTab.Padding = new System.Windows.Forms.Padding(3);
-            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 319);
+            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 301);
             this.invoiceLookupTab.TabIndex = 0;
             this.invoiceLookupTab.Text = "Invoice Lookup";
             this.invoiceLookupTab.UseVisualStyleBackColor = true;
@@ -116,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
             this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
-            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 262);
+            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 244);
             this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
             this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
             this.getInvoiceGroupBox.TabIndex = 12;
@@ -158,7 +163,7 @@
             this.invoiceListGroupBox.Controls.Add(this.openInvoice);
             this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
             this.invoiceListGroupBox.Name = "invoiceListGroupBox";
-            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 128);
+            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 110);
             this.invoiceListGroupBox.TabIndex = 11;
             this.invoiceListGroupBox.TabStop = false;
             this.invoiceListGroupBox.Text = "Invoice LIst";
@@ -172,7 +177,7 @@
             this.invoiceList.Location = new System.Drawing.Point(6, 19);
             this.invoiceList.Name = "invoiceList";
             this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.invoiceList.Size = new System.Drawing.Size(165, 95);
+            this.invoiceList.Size = new System.Drawing.Size(165, 69);
             this.invoiceList.TabIndex = 6;
             // 
             // label2
@@ -277,10 +282,10 @@
             // openInvoiceTab
             // 
             this.openInvoiceTab.Controls.Add(this.pictureBox1);
-            this.openInvoiceTab.Location = new System.Drawing.Point(4, 22);
+            this.openInvoiceTab.Location = new System.Drawing.Point(4, 40);
             this.openInvoiceTab.Name = "openInvoiceTab";
             this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.openInvoiceTab.Size = new System.Drawing.Size(292, 319);
+            this.openInvoiceTab.Size = new System.Drawing.Size(292, 301);
             this.openInvoiceTab.TabIndex = 1;
             this.openInvoiceTab.Text = "Open Invoice Report";
             this.openInvoiceTab.UseVisualStyleBackColor = true;
@@ -299,9 +304,9 @@
             // 
             this.lastCreditCardTab.Controls.Add(this.ccLookupList);
             this.lastCreditCardTab.Controls.Add(this.groupBox1);
-            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 22);
+            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 40);
             this.lastCreditCardTab.Name = "lastCreditCardTab";
-            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 319);
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 301);
             this.lastCreditCardTab.TabIndex = 2;
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
@@ -314,7 +319,7 @@
             this.ccLookupList.Controls.Add(this.ccDataGridView);
             this.ccLookupList.Location = new System.Drawing.Point(9, 103);
             this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(274, 213);
+            this.ccLookupList.Size = new System.Drawing.Size(511, 213);
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
@@ -327,7 +332,7 @@
             this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
             this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(260, 188);
+            this.ccDataGridView.Size = new System.Drawing.Size(497, 188);
             this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
@@ -339,7 +344,7 @@
             this.groupBox1.Controls.Add(this.custNumberLabel);
             this.groupBox1.Location = new System.Drawing.Point(8, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 84);
+            this.groupBox1.Size = new System.Drawing.Size(512, 84);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Lookup";
@@ -347,7 +352,7 @@
             // ccCustLookupButton
             // 
             this.ccCustLookupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccCustLookupButton.Location = new System.Drawing.Point(194, 50);
+            this.ccCustLookupButton.Location = new System.Drawing.Point(431, 50);
             this.ccCustLookupButton.Name = "ccCustLookupButton";
             this.ccCustLookupButton.Size = new System.Drawing.Size(75, 23);
             this.ccCustLookupButton.TabIndex = 2;
@@ -363,7 +368,7 @@
             this.ccCustomerNumber.Location = new System.Drawing.Point(103, 24);
             this.ccCustomerNumber.MaxLength = 10;
             this.ccCustomerNumber.Name = "ccCustomerNumber";
-            this.ccCustomerNumber.Size = new System.Drawing.Size(166, 20);
+            this.ccCustomerNumber.Size = new System.Drawing.Size(403, 20);
             this.ccCustomerNumber.TabIndex = 1;
             this.ccCustomerNumber.TextChanged += new System.EventHandler(this.ccCustomerNumber_TextChanged);
             // 
@@ -378,53 +383,60 @@
             this.custNumberLabel.TabIndex = 0;
             this.custNumberLabel.Text = "Customer Number:";
             // 
-            // tabPage1
+            // custExportTab
             // 
-            this.tabPage1.Controls.Add(this.custExportBtn);
-            this.tabPage1.Controls.Add(this.dateRangeLookupGroup);
-            this.tabPage1.Controls.Add(this.customerExportLookup);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(292, 319);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "custExportTab";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.custExportTab.Controls.Add(this.exportGroup);
+            this.custExportTab.Controls.Add(this.dateRangeLookupGroup);
+            this.custExportTab.Controls.Add(this.customerExportLookup);
+            this.custExportTab.Location = new System.Drawing.Point(4, 40);
+            this.custExportTab.Name = "custExportTab";
+            this.custExportTab.Padding = new System.Windows.Forms.Padding(3);
+            this.custExportTab.Size = new System.Drawing.Size(292, 301);
+            this.custExportTab.TabIndex = 3;
+            this.custExportTab.Text = "Customer History Export";
+            this.custExportTab.UseVisualStyleBackColor = true;
             // 
-            // customerExportLookup
+            // exportGroup
             // 
-            this.customerExportLookup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.exportGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerExportLookup.Controls.Add(this.custExportNum);
-            this.customerExportLookup.Controls.Add(this.label1);
-            this.customerExportLookup.Location = new System.Drawing.Point(8, 6);
-            this.customerExportLookup.Name = "customerExportLookup";
-            this.customerExportLookup.Size = new System.Drawing.Size(275, 58);
-            this.customerExportLookup.TabIndex = 1;
-            this.customerExportLookup.TabStop = false;
-            this.customerExportLookup.Text = "Customer Lookup";
+            this.exportGroup.Controls.Add(this.progressLabel);
+            this.exportGroup.Controls.Add(this.progressBar);
+            this.exportGroup.Controls.Add(this.custExportBtn);
+            this.exportGroup.Location = new System.Drawing.Point(8, 161);
+            this.exportGroup.Name = "exportGroup";
+            this.exportGroup.Size = new System.Drawing.Size(278, 72);
+            this.exportGroup.TabIndex = 3;
+            this.exportGroup.TabStop = false;
+            this.exportGroup.Text = "Export";
             // 
-            // custExportNum
+            // progressLabel
             // 
-            this.custExportNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.custExportNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.custExportNum.Location = new System.Drawing.Point(103, 24);
-            this.custExportNum.MaxLength = 10;
-            this.custExportNum.Name = "custExportNum";
-            this.custExportNum.Size = new System.Drawing.Size(166, 20);
-            this.custExportNum.TabIndex = 1;
+            this.progressLabel.AutoSize = true;
+            this.progressLabel.Location = new System.Drawing.Point(6, 45);
+            this.progressLabel.Name = "progressLabel";
+            this.progressLabel.Size = new System.Drawing.Size(48, 13);
+            this.progressLabel.TabIndex = 4;
+            this.progressLabel.Text = "Progress";
             // 
-            // label1
+            // progressBar
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Customer Number:";
+            this.progressBar.Location = new System.Drawing.Point(6, 19);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(185, 23);
+            this.progressBar.TabIndex = 3;
+            this.progressBar.Visible = false;
+            // 
+            // custExportBtn
+            // 
+            this.custExportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.custExportBtn.Location = new System.Drawing.Point(197, 19);
+            this.custExportBtn.Name = "custExportBtn";
+            this.custExportBtn.Size = new System.Drawing.Size(75, 23);
+            this.custExportBtn.TabIndex = 2;
+            this.custExportBtn.Text = "Export";
+            this.custExportBtn.UseVisualStyleBackColor = true;
+            this.custExportBtn.Click += new System.EventHandler(this.custExportBtn_Click);
             // 
             // dateRangeLookupGroup
             // 
@@ -436,41 +448,10 @@
             this.dateRangeLookupGroup.Controls.Add(this.label4);
             this.dateRangeLookupGroup.Location = new System.Drawing.Point(8, 70);
             this.dateRangeLookupGroup.Name = "dateRangeLookupGroup";
-            this.dateRangeLookupGroup.Size = new System.Drawing.Size(275, 85);
+            this.dateRangeLookupGroup.Size = new System.Drawing.Size(278, 85);
             this.dateRangeLookupGroup.TabIndex = 2;
             this.dateRangeLookupGroup.TabStop = false;
             this.dateRangeLookupGroup.Text = "Date Range";
-            // 
-            // custExportBtn
-            // 
-            this.custExportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.custExportBtn.Location = new System.Drawing.Point(208, 161);
-            this.custExportBtn.Name = "custExportBtn";
-            this.custExportBtn.Size = new System.Drawing.Size(75, 23);
-            this.custExportBtn.TabIndex = 2;
-            this.custExportBtn.Text = "Export";
-            this.custExportBtn.UseVisualStyleBackColor = true;
-            this.custExportBtn.Click += new System.EventHandler(this.custExportBtn_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Start Date:";
-            // 
-            // exportStartDate
-            // 
-            this.exportStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportStartDate.Location = new System.Drawing.Point(69, 20);
-            this.exportStartDate.Name = "exportStartDate";
-            this.exportStartDate.Size = new System.Drawing.Size(200, 20);
-            this.exportStartDate.TabIndex = 1;
             // 
             // exportEndDate
             // 
@@ -478,7 +459,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.exportEndDate.Location = new System.Drawing.Point(69, 46);
             this.exportEndDate.Name = "exportEndDate";
-            this.exportEndDate.Size = new System.Drawing.Size(200, 20);
+            this.exportEndDate.Size = new System.Drawing.Size(203, 20);
             this.exportEndDate.TabIndex = 3;
             // 
             // label5
@@ -491,6 +472,61 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 2;
             this.label5.Text = "End Date:";
+            // 
+            // exportStartDate
+            // 
+            this.exportStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportStartDate.Location = new System.Drawing.Point(69, 20);
+            this.exportStartDate.Name = "exportStartDate";
+            this.exportStartDate.Size = new System.Drawing.Size(203, 20);
+            this.exportStartDate.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Start Date:";
+            // 
+            // customerExportLookup
+            // 
+            this.customerExportLookup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customerExportLookup.Controls.Add(this.custExportNum);
+            this.customerExportLookup.Controls.Add(this.label1);
+            this.customerExportLookup.Location = new System.Drawing.Point(8, 6);
+            this.customerExportLookup.Name = "customerExportLookup";
+            this.customerExportLookup.Size = new System.Drawing.Size(278, 58);
+            this.customerExportLookup.TabIndex = 1;
+            this.customerExportLookup.TabStop = false;
+            this.customerExportLookup.Text = "Customer Lookup";
+            // 
+            // custExportNum
+            // 
+            this.custExportNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.custExportNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.custExportNum.Location = new System.Drawing.Point(103, 24);
+            this.custExportNum.MaxLength = 10;
+            this.custExportNum.Name = "custExportNum";
+            this.custExportNum.Size = new System.Drawing.Size(169, 20);
+            this.custExportNum.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customer Number:";
             // 
             // MetroToolsForm
             // 
@@ -517,11 +553,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.customerExportLookup.ResumeLayout(false);
-            this.customerExportLookup.PerformLayout();
+            this.custExportTab.ResumeLayout(false);
+            this.exportGroup.ResumeLayout(false);
+            this.exportGroup.PerformLayout();
             this.dateRangeLookupGroup.ResumeLayout(false);
             this.dateRangeLookupGroup.PerformLayout();
+            this.customerExportLookup.ResumeLayout(false);
+            this.customerExportLookup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -553,7 +591,7 @@
         private System.Windows.Forms.TextBox ccCustomerNumber;
         private System.Windows.Forms.DataGridView ccDataGridView;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage custExportTab;
         private System.Windows.Forms.Button custExportBtn;
         private System.Windows.Forms.GroupBox dateRangeLookupGroup;
         private System.Windows.Forms.DateTimePicker exportEndDate;
@@ -563,6 +601,9 @@
         private System.Windows.Forms.GroupBox customerExportLookup;
         private System.Windows.Forms.TextBox custExportNum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox exportGroup;
+        private System.Windows.Forms.Label progressLabel;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 

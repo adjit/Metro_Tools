@@ -27,9 +27,10 @@ namespace MetroTools
         {
             string custNum = ccCustomerNumber.Text;
             ccLookup LastCC = new ccLookup(custNum);
-            fillDataGrid(LastCC.getDataTable());
+            ccDataGridView.DataSource = LastCC.getDataTable();
         }
 
+        //Deprecated function. No need for it. Put it in event handler
         private void fillDataGrid(DataTable dt)
         {
             ccDataGridView.DataSource = dt;
@@ -121,9 +122,18 @@ namespace MetroTools
             if (ccCustomerNumber.TextLength >= 7) ccCustLookupButton.Enabled = true;
         }
 
-        private void custExportBtn_Click(object sender, EventArgs e)
+        private async void custExportBtn_Click(object sender, EventArgs e)
         {
-            CustExport ce = new CustExport(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
+            var progress = new Progress<int>(percent =>
+            {
+                progressBar.Value = percent;
+                progressLabel.Text = percent.ToString() + "%";
+            });
+
+            CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
+            await Task.Run(() => CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value, progress));
+
+            //            CustExport ce = new CustExport(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
         }
     }
 }

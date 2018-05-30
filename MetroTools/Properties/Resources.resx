@@ -207,4 +207,14 @@ Where
 Order by SOPNUMBE</value>
     <comment>Customer cross reference query to check for rows left out of the custExportQuery</comment>
   </data>
+  <data name="invoiceTrxQuery" xml:space="preserve">
+    <value>Select TOP 1 *
+From
+	Metro.dbo.SOP10107 tx
+Where
+	tx.SOPNUMBE = '{0}' AND
+	tx.SOPTYPE = 3
+Order by tx.DEX_ROW_ID</value>
+    <comment>Query to lookup tracking number by invoice</comment>
+  </data>
 </root>
