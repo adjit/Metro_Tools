@@ -1,5 +1,8 @@
 ﻿Select
+	'Metsales' as 'Distributor',
+	th.CSTPONBR as 'PO',
 	tr.SOPNUMBE as 'Invoice Number',
+	tr.QUANTITY as 'Qty',
 	tr.ITEMNMBR as 'Product Number',
 	tr.ITEMDESC as 'Product Description',
 	tr.UNITPRCE as 'Unit Price',

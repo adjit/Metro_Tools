@@ -1,5 +1,8 @@
 ﻿Select
+	'Metsales' as 'Distributor',
+	th.CSTPONBR as 'PO',
 	tr.SOPNUMBE,
+	tr.QUANTITY as 'Qty',
 	tr.ITEMNMBR,
 	tr.ITEMDESC,
 	tr.UNITPRCE,
