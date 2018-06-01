@@ -59,7 +59,7 @@ namespace MetroTools
 
             for(int i = 0; i < initialTable.Rows.Count; i++)
             {
-                invoiceNum = initialTable.Rows[i][0].ToString();
+                invoiceNum = initialTable.Rows[i][(int)ExcelColumn.InvoiceNumber].ToString();
 
                 if(!parsedInvoices.ContainsKey(invoiceNum))
                 {
