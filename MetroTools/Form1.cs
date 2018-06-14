@@ -22,6 +22,9 @@ namespace MetroTools
             InitializeComponent();
             openStandaloneInvoice.Enabled = false;
             ccCustLookupButton.Enabled = false;
+            setDefaultDims();
+            exportSavePath.Text = Properties.Settings.Default._exportSavePath;
+            chkAutosaveExport.Checked = Properties.Settings.Default._exportAutosave;
         }
 
         private void ccCustLookupButton_Click(object sender, EventArgs e)
@@ -43,6 +46,13 @@ namespace MetroTools
             {
                 this.Width = Properties.Settings.Default._ccFormWidth;
                 MetroTabControl.Width = Properties.Settings.Default._ccTabWidth;
+            }
+            else if(MetroTabControl.SelectedIndex == 3)
+            {
+                this.Width = Properties.Settings.Default._exportFormWidth;
+                MetroTabControl.Width = Properties.Settings.Default._exportTabWidth;
+                this.Height = Properties.Settings.Default._exportFormHeight;
+                MetroTabControl.Height = Properties.Settings.Default._exportTabHeight;
             }
             else setDefaultDims();
         }
@@ -139,6 +149,26 @@ namespace MetroTools
             await Task.Run(() => CustExport.ExportCustomer(custExportNum.Text, exportStartDate.Value, exportEndDate.Value, progress));
 
             //            CustExport ce = new CustExport(custExportNum.Text, exportStartDate.Value, exportEndDate.Value);
+        }
+
+        private void btnExportSavePath_Click(object sender, EventArgs e)
+        {
+            using(var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if(result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    exportSavePath.Text = fbd.SelectedPath;
+                }
+            }
+        }
+
+        private void btnExportSaveSettings_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default._exportAutosave = chkAutosaveExport.Checked;
+            Properties.Settings.Default._exportSavePath = exportSavePath.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

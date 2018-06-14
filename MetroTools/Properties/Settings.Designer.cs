@@ -25,7 +25,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("380")]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
         public int _defaultFormHeight {
             get {
                 return ((int)(this["_defaultFormHeight"]));
@@ -43,7 +43,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("345")]
+        [global::System.Configuration.DefaultSettingValueAttribute("365")]
         public int _defaultTabHeight {
             get {
                 return ((int)(this["_defaultTabHeight"]));
@@ -61,7 +61,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("320")]
         public int _ccTabHeight {
             get {
                 return ((int)(this["_ccTabHeight"]));
@@ -79,7 +79,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("380")]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
         public int _ccFormHeight {
             get {
                 return ((int)(this["_ccFormHeight"]));
@@ -92,6 +92,78 @@ namespace MetroTools.Properties {
         public int _ccFormWidth {
             get {
                 return ((int)(this["_ccFormWidth"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int _exportFrequency {
+            get {
+                return ((int)(this["_exportFrequency"]));
+            }
+            set {
+                this["_exportFrequency"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("415")]
+        public int _exportTabHeight {
+            get {
+                return ((int)(this["_exportTabHeight"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public int _exportTabWidth {
+            get {
+                return ((int)(this["_exportTabWidth"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("450")]
+        public int _exportFormHeight {
+            get {
+                return ((int)(this["_exportFormHeight"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("315")]
+        public int _exportFormWidth {
+            get {
+                return ((int)(this["_exportFormWidth"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string _exportSavePath {
+            get {
+                return ((string)(this["_exportSavePath"]));
+            }
+            set {
+                this["_exportSavePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool _exportAutosave {
+            get {
+                return ((bool)(this["_exportAutosave"]));
+            }
+            set {
+                this["_exportAutosave"] = value;
             }
         }
     }

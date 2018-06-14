@@ -67,6 +67,12 @@
             this.customerExportLookup = new System.Windows.Forms.GroupBox();
             this.custExportNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.exportSavePath = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.chkAutosaveExport = new System.Windows.Forms.CheckBox();
+            this.btnExportSavePath = new System.Windows.Forms.Button();
+            this.btnExportSaveSettings = new System.Windows.Forms.Button();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
@@ -82,6 +88,7 @@
             this.exportGroup.SuspendLayout();
             this.dateRangeLookupGroup.SuspendLayout();
             this.customerExportLookup.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -94,11 +101,11 @@
             this.MetroTabControl.Controls.Add(this.lastCreditCardTab);
             this.MetroTabControl.Controls.Add(this.custExportTab);
             this.MetroTabControl.Location = new System.Drawing.Point(0, 0);
-            this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 345);
+            this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 365);
             this.MetroTabControl.Multiline = true;
             this.MetroTabControl.Name = "MetroTabControl";
             this.MetroTabControl.SelectedIndex = 0;
-            this.MetroTabControl.Size = new System.Drawing.Size(300, 345);
+            this.MetroTabControl.Size = new System.Drawing.Size(300, 415);
             this.MetroTabControl.TabIndex = 0;
             this.MetroTabControl.SelectedIndexChanged += new System.EventHandler(this.MetroTabControl_SelectedIndexChanged);
             // 
@@ -110,7 +117,7 @@
             this.invoiceLookupTab.Location = new System.Drawing.Point(4, 40);
             this.invoiceLookupTab.Name = "invoiceLookupTab";
             this.invoiceLookupTab.Padding = new System.Windows.Forms.Padding(3);
-            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 301);
+            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 321);
             this.invoiceLookupTab.TabIndex = 0;
             this.invoiceLookupTab.Text = "Invoice Lookup";
             this.invoiceLookupTab.UseVisualStyleBackColor = true;
@@ -121,7 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
             this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
-            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 244);
+            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 259);
             this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
             this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
             this.getInvoiceGroupBox.TabIndex = 12;
@@ -163,7 +170,7 @@
             this.invoiceListGroupBox.Controls.Add(this.openInvoice);
             this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
             this.invoiceListGroupBox.Name = "invoiceListGroupBox";
-            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 110);
+            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 125);
             this.invoiceListGroupBox.TabIndex = 11;
             this.invoiceListGroupBox.TabStop = false;
             this.invoiceListGroupBox.Text = "Invoice LIst";
@@ -177,7 +184,7 @@
             this.invoiceList.Location = new System.Drawing.Point(6, 19);
             this.invoiceList.Name = "invoiceList";
             this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.invoiceList.Size = new System.Drawing.Size(165, 69);
+            this.invoiceList.Size = new System.Drawing.Size(165, 95);
             this.invoiceList.TabIndex = 6;
             // 
             // label2
@@ -285,7 +292,7 @@
             this.openInvoiceTab.Location = new System.Drawing.Point(4, 40);
             this.openInvoiceTab.Name = "openInvoiceTab";
             this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.openInvoiceTab.Size = new System.Drawing.Size(292, 301);
+            this.openInvoiceTab.Size = new System.Drawing.Size(292, 421);
             this.openInvoiceTab.TabIndex = 1;
             this.openInvoiceTab.Text = "Open Invoice Report";
             this.openInvoiceTab.UseVisualStyleBackColor = true;
@@ -306,7 +313,7 @@
             this.lastCreditCardTab.Controls.Add(this.groupBox1);
             this.lastCreditCardTab.Location = new System.Drawing.Point(4, 40);
             this.lastCreditCardTab.Name = "lastCreditCardTab";
-            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 301);
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 421);
             this.lastCreditCardTab.TabIndex = 2;
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
@@ -319,7 +326,7 @@
             this.ccLookupList.Controls.Add(this.ccDataGridView);
             this.ccLookupList.Location = new System.Drawing.Point(9, 103);
             this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(274, 186);
+            this.ccLookupList.Size = new System.Drawing.Size(274, 206);
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
@@ -332,7 +339,7 @@
             this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
             this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(260, 161);
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 181);
             this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
@@ -385,13 +392,14 @@
             // 
             // custExportTab
             // 
+            this.custExportTab.Controls.Add(this.groupBox2);
             this.custExportTab.Controls.Add(this.exportGroup);
             this.custExportTab.Controls.Add(this.dateRangeLookupGroup);
             this.custExportTab.Controls.Add(this.customerExportLookup);
             this.custExportTab.Location = new System.Drawing.Point(4, 40);
             this.custExportTab.Name = "custExportTab";
             this.custExportTab.Padding = new System.Windows.Forms.Padding(3);
-            this.custExportTab.Size = new System.Drawing.Size(292, 301);
+            this.custExportTab.Size = new System.Drawing.Size(292, 371);
             this.custExportTab.TabIndex = 3;
             this.custExportTab.Text = "Customer History Export";
             this.custExportTab.UseVisualStyleBackColor = true;
@@ -421,6 +429,8 @@
             // 
             // progressBar
             // 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(6, 19);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(185, 23);
@@ -528,14 +538,83 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Number:";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnExportSaveSettings);
+            this.groupBox2.Controls.Add(this.btnExportSavePath);
+            this.groupBox2.Controls.Add(this.chkAutosaveExport);
+            this.groupBox2.Controls.Add(this.exportSavePath);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(8, 240);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(278, 119);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Settings";
+            // 
+            // exportSavePath
+            // 
+            this.exportSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportSavePath.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.exportSavePath.Location = new System.Drawing.Point(98, 36);
+            this.exportSavePath.MaxLength = 10;
+            this.exportSavePath.Name = "exportSavePath";
+            this.exportSavePath.Size = new System.Drawing.Size(176, 20);
+            this.exportSavePath.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "SaveAs Location:";
+            // 
+            // chkAutosaveExport
+            // 
+            this.chkAutosaveExport.AutoSize = true;
+            this.chkAutosaveExport.Location = new System.Drawing.Point(11, 19);
+            this.chkAutosaveExport.Name = "chkAutosaveExport";
+            this.chkAutosaveExport.Size = new System.Drawing.Size(104, 17);
+            this.chkAutosaveExport.TabIndex = 4;
+            this.chkAutosaveExport.Text = "Autosave Export";
+            this.chkAutosaveExport.UseVisualStyleBackColor = true;
+            // 
+            // btnExportSavePath
+            // 
+            this.btnExportSavePath.Location = new System.Drawing.Point(196, 63);
+            this.btnExportSavePath.Name = "btnExportSavePath";
+            this.btnExportSavePath.Size = new System.Drawing.Size(75, 23);
+            this.btnExportSavePath.TabIndex = 5;
+            this.btnExportSavePath.Text = "Browse";
+            this.btnExportSavePath.UseVisualStyleBackColor = true;
+            this.btnExportSavePath.Click += new System.EventHandler(this.btnExportSavePath_Click);
+            // 
+            // btnExportSaveSettings
+            // 
+            this.btnExportSaveSettings.Location = new System.Drawing.Point(116, 63);
+            this.btnExportSaveSettings.Name = "btnExportSaveSettings";
+            this.btnExportSaveSettings.Size = new System.Drawing.Size(75, 23);
+            this.btnExportSaveSettings.TabIndex = 6;
+            this.btnExportSaveSettings.Text = "Save";
+            this.btnExportSaveSettings.UseVisualStyleBackColor = true;
+            this.btnExportSaveSettings.Click += new System.EventHandler(this.btnExportSaveSettings_Click);
+            // 
             // MetroToolsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 341);
+            this.ClientSize = new System.Drawing.Size(299, 411);
             this.Controls.Add(this.MetroTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(315, 380);
+            this.MinimumSize = new System.Drawing.Size(315, 400);
             this.Name = "MetroToolsForm";
             this.Text = "Metro Tools";
             this.MetroTabControl.ResumeLayout(false);
@@ -560,6 +639,8 @@
             this.dateRangeLookupGroup.PerformLayout();
             this.customerExportLookup.ResumeLayout(false);
             this.customerExportLookup.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -604,6 +685,12 @@
         private System.Windows.Forms.GroupBox exportGroup;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExportSavePath;
+        private System.Windows.Forms.CheckBox chkAutosaveExport;
+        private System.Windows.Forms.TextBox exportSavePath;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnExportSaveSettings;
     }
 }
 

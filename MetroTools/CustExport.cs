@@ -9,19 +9,27 @@ using Metro;
 namespace MetroTools
 {
     class CustExport
-    {
+    {        
         public static void ExportCustomer(string custNumber, DateTime startDate, DateTime endDate)
         {
             string initialQuery = Properties.Resources.custExportQuery;
             string comparatorQuery = Properties.Resources.custReferenceExportQuery;
+
 
             initialQuery = string.Format(initialQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
             comparatorQuery = string.Format(comparatorQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
 
             DataTable dti = Database.sqlLookup(initialQuery);
             DataTable dtc = Database.sqlLookup(comparatorQuery);
-                        
-            ExcelM.Export(_fillInCompare(dti, dtc));
+
+            if (Properties.Settings.Default._exportAutosave && Properties.Settings.Default._exportSavePath != "")
+            {
+                string saveFileName = custNumber + "-" + startDate.ToShortDateString().Replace('/', '-')
+                        + "-" + endDate.ToShortDateString().Replace('/', '-') + ".xlsx";
+                ExcelM.Export(_fillInCompare(dti, dtc), false, Properties.Settings.Default._exportSavePath + '\\' + saveFileName);
+            }
+            else
+                ExcelM.Export(_fillInCompare(dti, dtc));
         }
 
         public static void ExportCustomer(string custNumber, DateTime startDate, DateTime endDate, IProgress<int> progress)
@@ -44,7 +52,14 @@ namespace MetroTools
 
             progress.Report(40);
 
-            ExcelM.Export(_fillInCompare(dti, dtc));
+            if (Properties.Settings.Default._exportAutosave && Properties.Settings.Default._exportSavePath != "")
+            {
+                string saveFileName = custNumber + "-" + startDate.ToShortDateString().Replace('/', '-')
+                        + "-" + endDate.ToShortDateString().Replace('/', '-') + ".xlsx";
+                ExcelM.Export(_fillInCompare(dti, dtc), false, Properties.Settings.Default._exportSavePath + '\\' + saveFileName);
+            }
+            else
+                ExcelM.Export(_fillInCompare(dti, dtc));
 
             progress.Report(100);
         }
