@@ -9,38 +9,44 @@ using Metro;
 namespace MetroTools
 {
     class CustExport
-    {        
+    {
+        private static string _custNumber;
+        private static DateTime _startDate;
+        private static DateTime _endDate;
+
         public static void ExportCustomer(string custNumber, DateTime startDate, DateTime endDate)
         {
+            _custNumber = custNumber;
+            _startDate = startDate;
+            _endDate = endDate;
+
             string initialQuery = Properties.Resources.custExportQuery;
             string comparatorQuery = Properties.Resources.custReferenceExportQuery;
 
 
-            initialQuery = string.Format(initialQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
-            comparatorQuery = string.Format(comparatorQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
+            initialQuery = string.Format(initialQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
+            comparatorQuery = string.Format(comparatorQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
 
             DataTable dti = Database.sqlLookup(initialQuery);
             DataTable dtc = Database.sqlLookup(comparatorQuery);
 
-            if (Properties.Settings.Default._exportAutosave && Properties.Settings.Default._exportSavePath != "")
-            {
-                string saveFileName = custNumber + "-" + startDate.ToShortDateString().Replace('/', '-')
-                        + "-" + endDate.ToShortDateString().Replace('/', '-') + ".xlsx";
-                ExcelM.Export(_fillInCompare(dti, dtc), false, Properties.Settings.Default._exportSavePath + '\\' + saveFileName);
-            }
-            else
-                ExcelM.Export(_fillInCompare(dti, dtc));
+            _export(_fillInCompare(dti, dtc));
+
         }
 
         public static void ExportCustomer(string custNumber, DateTime startDate, DateTime endDate, IProgress<int> progress)
         {
+            _custNumber = custNumber;
+            _startDate = startDate;
+            _endDate = endDate;
+
             string initialQuery = Properties.Resources.custExportQuery;
             string comparatorQuery = Properties.Resources.custReferenceExportQuery;
 
             progress.Report(10);
 
-            initialQuery = string.Format(initialQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
-            comparatorQuery = string.Format(comparatorQuery, custNumber, startDate.ToShortDateString(), endDate.ToShortDateString());
+            initialQuery = string.Format(initialQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
+            comparatorQuery = string.Format(comparatorQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
 
             progress.Report(20);
 
@@ -52,16 +58,21 @@ namespace MetroTools
 
             progress.Report(40);
 
-            if (Properties.Settings.Default._exportAutosave && Properties.Settings.Default._exportSavePath != "")
-            {
-                string saveFileName = custNumber + "-" + startDate.ToShortDateString().Replace('/', '-')
-                        + "-" + endDate.ToShortDateString().Replace('/', '-') + ".xlsx";
-                ExcelM.Export(_fillInCompare(dti, dtc), false, Properties.Settings.Default._exportSavePath + '\\' + saveFileName);
-            }
-            else
-                ExcelM.Export(_fillInCompare(dti, dtc));
+            _export(_fillInCompare(dti, dtc));
 
             progress.Report(100);
+        }
+
+        private static void _export(DataTable dataTable)
+        {
+            if (Properties.Settings.Default._exportAutosave && Properties.Settings.Default._exportSavePath != "")
+            {
+                string saveFileName = _custNumber + "-" + _startDate.ToShortDateString().Replace('/', '-')
+                        + "-" + _endDate.ToShortDateString().Replace('/', '-') + ".xlsx";
+                ExcelM.Export(dataTable, false, Properties.Settings.Default._exportSavePath + '\\' + saveFileName);
+            }
+            else
+                ExcelM.Export(dataTable);
         }
 
         private static DataTable _fillInCompare(DataTable initialTable, DataTable comparatorTable)

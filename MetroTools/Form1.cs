@@ -22,6 +22,7 @@ namespace MetroTools
             InitializeComponent();
             openStandaloneInvoice.Enabled = false;
             ccCustLookupButton.Enabled = false;
+            arExportBtn.Enabled = false;
             setDefaultDims();
             exportSavePath.Text = Properties.Settings.Default._exportSavePath;
             chkAutosaveExport.Checked = Properties.Settings.Default._exportAutosave;
@@ -131,6 +132,31 @@ namespace MetroTools
         private void ccCustomerNumber_TextChanged(object sender, EventArgs e)
         {
             if (ccCustomerNumber.TextLength >= 7) ccCustLookupButton.Enabled = true;
+            else ccCustLookupButton.Enabled = false;
+        }
+
+        private void arCustNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (arCustNumber.TextLength >= 7) arExportBtn.Enabled = true;
+            else arExportBtn.Enabled = false;
+        }
+
+        private async void arExportBtn_Click(object sender, EventArgs e)
+        {
+            arProgressBar.Visible = true;
+            arProgressBar.Value = 0;
+            arProgressLabel.Text = "0%";
+            var progress = new Progress<double>(percent =>
+            {
+                if (arProgressBar.Value + percent > 100)
+                {
+                    arProgressBar.Value = 100;
+                }
+                else arProgressBar.Value += Convert.ToInt32(percent);
+                arProgressLabel.Text = arProgressBar.Value.ToString() + "%";
+            });
+
+            await Task.Run(() => arExport.arStatementExport(arCustNumber.Text, progress));
         }
 
         private async void custExportBtn_Click(object sender, EventArgs e)

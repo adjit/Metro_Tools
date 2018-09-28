@@ -62,6 +62,29 @@ namespace MetroTools.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Select 
+        ///       s1.CSTPONBR AS &quot;PO Number&quot;,
+        ///       r1.CUSTNMBR,
+        ///       r1.DOCNUMBR AS &quot;Invoice Number&quot;,
+        ///       r1.DOCDATE AS &quot;Invoice Date&quot;,
+        ///       r1.DUEDATE AS &quot;Due Date&quot;,
+        ///       r1.ORTRXAMT AS &quot;Invoice Amount&quot;,
+        ///       r1.CURTRXAM AS &quot;Current Amount&quot;
+        ///
+        ///From METRO.dbo.RM20101 r1
+        ///
+        ///       LEFT JOIN METRO.dbo.SOP30200 s1
+        ///              ON s1.SOPNUMBE = r1.DOCNUMBR
+        ///
+        ///       where r1.CUSTNMBR=&apos;{0}&apos; AND r1.CURTRXAM &lt;&gt; 0 AND r1.RMDTYPAL = 1.
+        /// </summary>
+        internal static string arQuery {
+            get {
+                return ResourceManager.GetString("arQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select 
         ///	LS.DOCDATE,
         ///	cc.SOPNUMBE,
         ///	cc.CARDNAME,

@@ -223,4 +223,22 @@ Where
 Order by tx.DEX_ROW_ID</value>
     <comment>Query to lookup tracking number by invoice</comment>
   </data>
+  <data name="arQuery" xml:space="preserve">
+    <value>Select 
+       s1.CSTPONBR AS "PO Number",
+       r1.CUSTNMBR,
+       r1.DOCNUMBR AS "Invoice Number",
+       r1.DOCDATE AS "Invoice Date",
+       r1.DUEDATE AS "Due Date",
+       r1.ORTRXAMT AS "Invoice Amount",
+       r1.CURTRXAM AS "Current Amount"
+
+From METRO.dbo.RM20101 r1
+
+       LEFT JOIN METRO.dbo.SOP30200 s1
+              ON s1.SOPNUMBE = r1.DOCNUMBR
+
+       where r1.CUSTNMBR='{0}' AND r1.CURTRXAM &lt;&gt; 0 AND r1.RMDTYPAL = 1</value>
+    <comment>Query to lookup accounts recievable statements</comment>
+  </data>
 </root>

@@ -55,6 +55,12 @@
             this.ccCustomerNumber = new System.Windows.Forms.TextBox();
             this.custNumberLabel = new System.Windows.Forms.Label();
             this.custExportTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExportSaveSettings = new System.Windows.Forms.Button();
+            this.btnExportSavePath = new System.Windows.Forms.Button();
+            this.chkAutosaveExport = new System.Windows.Forms.CheckBox();
+            this.exportSavePath = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.exportGroup = new System.Windows.Forms.GroupBox();
             this.progressLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -67,12 +73,14 @@
             this.customerExportLookup = new System.Windows.Forms.GroupBox();
             this.custExportNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.exportSavePath = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.chkAutosaveExport = new System.Windows.Forms.CheckBox();
-            this.btnExportSavePath = new System.Windows.Forms.Button();
-            this.btnExportSaveSettings = new System.Windows.Forms.Button();
+            this.arStatementsTab = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.arCustNumber = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.arProgressLabel = new System.Windows.Forms.Label();
+            this.arProgressBar = new System.Windows.Forms.ProgressBar();
+            this.arExportBtn = new System.Windows.Forms.Button();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
@@ -85,10 +93,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ccDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.custExportTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.exportGroup.SuspendLayout();
             this.dateRangeLookupGroup.SuspendLayout();
             this.customerExportLookup.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.arStatementsTab.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -100,6 +111,7 @@
             this.MetroTabControl.Controls.Add(this.openInvoiceTab);
             this.MetroTabControl.Controls.Add(this.lastCreditCardTab);
             this.MetroTabControl.Controls.Add(this.custExportTab);
+            this.MetroTabControl.Controls.Add(this.arStatementsTab);
             this.MetroTabControl.Location = new System.Drawing.Point(0, 0);
             this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 365);
             this.MetroTabControl.Multiline = true;
@@ -117,7 +129,7 @@
             this.invoiceLookupTab.Location = new System.Drawing.Point(4, 40);
             this.invoiceLookupTab.Name = "invoiceLookupTab";
             this.invoiceLookupTab.Padding = new System.Windows.Forms.Padding(3);
-            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 321);
+            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 371);
             this.invoiceLookupTab.TabIndex = 0;
             this.invoiceLookupTab.Text = "Invoice Lookup";
             this.invoiceLookupTab.UseVisualStyleBackColor = true;
@@ -128,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
             this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
-            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 259);
+            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 309);
             this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
             this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
             this.getInvoiceGroupBox.TabIndex = 12;
@@ -170,7 +182,7 @@
             this.invoiceListGroupBox.Controls.Add(this.openInvoice);
             this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
             this.invoiceListGroupBox.Name = "invoiceListGroupBox";
-            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 125);
+            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 175);
             this.invoiceListGroupBox.TabIndex = 11;
             this.invoiceListGroupBox.TabStop = false;
             this.invoiceListGroupBox.Text = "Invoice LIst";
@@ -184,7 +196,7 @@
             this.invoiceList.Location = new System.Drawing.Point(6, 19);
             this.invoiceList.Name = "invoiceList";
             this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.invoiceList.Size = new System.Drawing.Size(165, 95);
+            this.invoiceList.Size = new System.Drawing.Size(165, 134);
             this.invoiceList.TabIndex = 6;
             // 
             // label2
@@ -292,7 +304,7 @@
             this.openInvoiceTab.Location = new System.Drawing.Point(4, 40);
             this.openInvoiceTab.Name = "openInvoiceTab";
             this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.openInvoiceTab.Size = new System.Drawing.Size(292, 421);
+            this.openInvoiceTab.Size = new System.Drawing.Size(292, 371);
             this.openInvoiceTab.TabIndex = 1;
             this.openInvoiceTab.Text = "Open Invoice Report";
             this.openInvoiceTab.UseVisualStyleBackColor = true;
@@ -313,7 +325,7 @@
             this.lastCreditCardTab.Controls.Add(this.groupBox1);
             this.lastCreditCardTab.Location = new System.Drawing.Point(4, 40);
             this.lastCreditCardTab.Name = "lastCreditCardTab";
-            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 421);
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 371);
             this.lastCreditCardTab.TabIndex = 2;
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
@@ -326,7 +338,7 @@
             this.ccLookupList.Controls.Add(this.ccDataGridView);
             this.ccLookupList.Location = new System.Drawing.Point(9, 103);
             this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(274, 206);
+            this.ccLookupList.Size = new System.Drawing.Size(274, 256);
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
@@ -339,7 +351,7 @@
             this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
             this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(260, 181);
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 231);
             this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
@@ -403,6 +415,75 @@
             this.custExportTab.TabIndex = 3;
             this.custExportTab.Text = "Customer History Export";
             this.custExportTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnExportSaveSettings);
+            this.groupBox2.Controls.Add(this.btnExportSavePath);
+            this.groupBox2.Controls.Add(this.chkAutosaveExport);
+            this.groupBox2.Controls.Add(this.exportSavePath);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(8, 240);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(278, 119);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Settings";
+            // 
+            // btnExportSaveSettings
+            // 
+            this.btnExportSaveSettings.Location = new System.Drawing.Point(116, 63);
+            this.btnExportSaveSettings.Name = "btnExportSaveSettings";
+            this.btnExportSaveSettings.Size = new System.Drawing.Size(75, 23);
+            this.btnExportSaveSettings.TabIndex = 6;
+            this.btnExportSaveSettings.Text = "Save";
+            this.btnExportSaveSettings.UseVisualStyleBackColor = true;
+            this.btnExportSaveSettings.Click += new System.EventHandler(this.btnExportSaveSettings_Click);
+            // 
+            // btnExportSavePath
+            // 
+            this.btnExportSavePath.Location = new System.Drawing.Point(196, 63);
+            this.btnExportSavePath.Name = "btnExportSavePath";
+            this.btnExportSavePath.Size = new System.Drawing.Size(75, 23);
+            this.btnExportSavePath.TabIndex = 5;
+            this.btnExportSavePath.Text = "Browse";
+            this.btnExportSavePath.UseVisualStyleBackColor = true;
+            this.btnExportSavePath.Click += new System.EventHandler(this.btnExportSavePath_Click);
+            // 
+            // chkAutosaveExport
+            // 
+            this.chkAutosaveExport.AutoSize = true;
+            this.chkAutosaveExport.Location = new System.Drawing.Point(11, 19);
+            this.chkAutosaveExport.Name = "chkAutosaveExport";
+            this.chkAutosaveExport.Size = new System.Drawing.Size(104, 17);
+            this.chkAutosaveExport.TabIndex = 4;
+            this.chkAutosaveExport.Text = "Autosave Export";
+            this.chkAutosaveExport.UseVisualStyleBackColor = true;
+            // 
+            // exportSavePath
+            // 
+            this.exportSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportSavePath.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.exportSavePath.Location = new System.Drawing.Point(98, 36);
+            this.exportSavePath.MaxLength = 500;
+            this.exportSavePath.Name = "exportSavePath";
+            this.exportSavePath.Size = new System.Drawing.Size(176, 20);
+            this.exportSavePath.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "SaveAs Location:";
             // 
             // exportGroup
             // 
@@ -538,74 +619,97 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Number:";
             // 
-            // groupBox2
+            // arStatementsTab
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.arStatementsTab.Controls.Add(this.groupBox4);
+            this.arStatementsTab.Controls.Add(this.groupBox3);
+            this.arStatementsTab.Location = new System.Drawing.Point(4, 40);
+            this.arStatementsTab.Name = "arStatementsTab";
+            this.arStatementsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.arStatementsTab.Size = new System.Drawing.Size(292, 371);
+            this.arStatementsTab.TabIndex = 4;
+            this.arStatementsTab.Text = "A/R Statements";
+            this.arStatementsTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btnExportSaveSettings);
-            this.groupBox2.Controls.Add(this.btnExportSavePath);
-            this.groupBox2.Controls.Add(this.chkAutosaveExport);
-            this.groupBox2.Controls.Add(this.exportSavePath);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(8, 240);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(278, 119);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Settings";
+            this.groupBox3.Controls.Add(this.arCustNumber);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(278, 58);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Customer Lookup";
             // 
-            // exportSavePath
+            // arCustNumber
             // 
-            this.exportSavePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.arCustNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportSavePath.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.exportSavePath.Location = new System.Drawing.Point(98, 36);
-            this.exportSavePath.MaxLength = 10;
-            this.exportSavePath.Name = "exportSavePath";
-            this.exportSavePath.Size = new System.Drawing.Size(176, 20);
-            this.exportSavePath.TabIndex = 3;
+            this.arCustNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.arCustNumber.Location = new System.Drawing.Point(103, 24);
+            this.arCustNumber.MaxLength = 10;
+            this.arCustNumber.Name = "arCustNumber";
+            this.arCustNumber.Size = new System.Drawing.Size(169, 20);
+            this.arCustNumber.TabIndex = 1;
+            this.arCustNumber.TextChanged += new System.EventHandler(this.arCustNumber_TextChanged);
             // 
-            // label6
+            // label7
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "SaveAs Location:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Customer Number:";
             // 
-            // chkAutosaveExport
+            // groupBox4
             // 
-            this.chkAutosaveExport.AutoSize = true;
-            this.chkAutosaveExport.Location = new System.Drawing.Point(11, 19);
-            this.chkAutosaveExport.Name = "chkAutosaveExport";
-            this.chkAutosaveExport.Size = new System.Drawing.Size(104, 17);
-            this.chkAutosaveExport.TabIndex = 4;
-            this.chkAutosaveExport.Text = "Autosave Export";
-            this.chkAutosaveExport.UseVisualStyleBackColor = true;
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.arProgressLabel);
+            this.groupBox4.Controls.Add(this.arProgressBar);
+            this.groupBox4.Controls.Add(this.arExportBtn);
+            this.groupBox4.Location = new System.Drawing.Point(8, 70);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(278, 72);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Export";
             // 
-            // btnExportSavePath
+            // arProgressLabel
             // 
-            this.btnExportSavePath.Location = new System.Drawing.Point(196, 63);
-            this.btnExportSavePath.Name = "btnExportSavePath";
-            this.btnExportSavePath.Size = new System.Drawing.Size(75, 23);
-            this.btnExportSavePath.TabIndex = 5;
-            this.btnExportSavePath.Text = "Browse";
-            this.btnExportSavePath.UseVisualStyleBackColor = true;
-            this.btnExportSavePath.Click += new System.EventHandler(this.btnExportSavePath_Click);
+            this.arProgressLabel.AutoSize = true;
+            this.arProgressLabel.Location = new System.Drawing.Point(6, 45);
+            this.arProgressLabel.Name = "arProgressLabel";
+            this.arProgressLabel.Size = new System.Drawing.Size(48, 13);
+            this.arProgressLabel.TabIndex = 4;
+            this.arProgressLabel.Text = "Progress";
             // 
-            // btnExportSaveSettings
+            // arProgressBar
             // 
-            this.btnExportSaveSettings.Location = new System.Drawing.Point(116, 63);
-            this.btnExportSaveSettings.Name = "btnExportSaveSettings";
-            this.btnExportSaveSettings.Size = new System.Drawing.Size(75, 23);
-            this.btnExportSaveSettings.TabIndex = 6;
-            this.btnExportSaveSettings.Text = "Save";
-            this.btnExportSaveSettings.UseVisualStyleBackColor = true;
-            this.btnExportSaveSettings.Click += new System.EventHandler(this.btnExportSaveSettings_Click);
+            this.arProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.arProgressBar.Location = new System.Drawing.Point(6, 19);
+            this.arProgressBar.Name = "arProgressBar";
+            this.arProgressBar.Size = new System.Drawing.Size(185, 23);
+            this.arProgressBar.TabIndex = 3;
+            this.arProgressBar.Visible = false;
+            // 
+            // arExportBtn
+            // 
+            this.arExportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.arExportBtn.Location = new System.Drawing.Point(197, 19);
+            this.arExportBtn.Name = "arExportBtn";
+            this.arExportBtn.Size = new System.Drawing.Size(75, 23);
+            this.arExportBtn.TabIndex = 2;
+            this.arExportBtn.Text = "Export";
+            this.arExportBtn.UseVisualStyleBackColor = true;
+            this.arExportBtn.Click += new System.EventHandler(this.arExportBtn_Click);
             // 
             // MetroToolsForm
             // 
@@ -633,14 +737,19 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.custExportTab.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.exportGroup.ResumeLayout(false);
             this.exportGroup.PerformLayout();
             this.dateRangeLookupGroup.ResumeLayout(false);
             this.dateRangeLookupGroup.PerformLayout();
             this.customerExportLookup.ResumeLayout(false);
             this.customerExportLookup.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.arStatementsTab.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -691,6 +800,14 @@
         private System.Windows.Forms.TextBox exportSavePath;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnExportSaveSettings;
+        private System.Windows.Forms.TabPage arStatementsTab;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label arProgressLabel;
+        private System.Windows.Forms.ProgressBar arProgressBar;
+        private System.Windows.Forms.Button arExportBtn;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox arCustNumber;
+        private System.Windows.Forms.Label label7;
     }
 }
 
