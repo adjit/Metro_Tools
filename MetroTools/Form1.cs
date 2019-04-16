@@ -26,6 +26,7 @@ namespace MetroTools
             setDefaultDims();
             exportSavePath.Text = Properties.Settings.Default._exportSavePath;
             chkAutosaveExport.Checked = Properties.Settings.Default._exportAutosave;
+            MetroTabControl.TabPages.Remove(openInvoiceTab);
         }
 
         private void ccCustLookupButton_Click(object sender, EventArgs e)
@@ -43,12 +44,12 @@ namespace MetroTools
 
         private void MetroTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MetroTabControl.SelectedIndex == 2)
+            if (MetroTabControl.SelectedIndex == MetroTabControl.TabPages.IndexOf(lastCreditCardTab))
             {
                 this.Width = Properties.Settings.Default._ccFormWidth;
                 MetroTabControl.Width = Properties.Settings.Default._ccTabWidth;
             }
-            else if(MetroTabControl.SelectedIndex == 3)
+            else if(MetroTabControl.SelectedIndex == MetroTabControl.TabPages.IndexOf(custExportTab))
             {
                 this.Width = Properties.Settings.Default._exportFormWidth;
                 MetroTabControl.Width = Properties.Settings.Default._exportTabWidth;

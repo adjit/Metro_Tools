@@ -74,13 +74,13 @@
             this.custExportNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.arStatementsTab = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.arCustNumber = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.arProgressLabel = new System.Windows.Forms.Label();
             this.arProgressBar = new System.Windows.Forms.ProgressBar();
             this.arExportBtn = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.arCustNumber = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
@@ -98,8 +98,8 @@
             this.dateRangeLookupGroup.SuspendLayout();
             this.customerExportLookup.SuspendLayout();
             this.arStatementsTab.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -323,9 +323,9 @@
             // 
             this.lastCreditCardTab.Controls.Add(this.ccLookupList);
             this.lastCreditCardTab.Controls.Add(this.groupBox1);
-            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 40);
+            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 22);
             this.lastCreditCardTab.Name = "lastCreditCardTab";
-            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 371);
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 389);
             this.lastCreditCardTab.TabIndex = 2;
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
@@ -631,42 +631,6 @@
             this.arStatementsTab.Text = "A/R Statements";
             this.arStatementsTab.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.arCustNumber);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(8, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(278, 58);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Customer Lookup";
-            // 
-            // arCustNumber
-            // 
-            this.arCustNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.arCustNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.arCustNumber.Location = new System.Drawing.Point(103, 24);
-            this.arCustNumber.MaxLength = 10;
-            this.arCustNumber.Name = "arCustNumber";
-            this.arCustNumber.Size = new System.Drawing.Size(169, 20);
-            this.arCustNumber.TabIndex = 1;
-            this.arCustNumber.TextChanged += new System.EventHandler(this.arCustNumber_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Customer Number:";
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -711,6 +675,42 @@
             this.arExportBtn.UseVisualStyleBackColor = true;
             this.arExportBtn.Click += new System.EventHandler(this.arExportBtn_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.arCustNumber);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Location = new System.Drawing.Point(8, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(278, 58);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Customer Lookup";
+            // 
+            // arCustNumber
+            // 
+            this.arCustNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.arCustNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.arCustNumber.Location = new System.Drawing.Point(103, 24);
+            this.arCustNumber.MaxLength = 10;
+            this.arCustNumber.Name = "arCustNumber";
+            this.arCustNumber.Size = new System.Drawing.Size(169, 20);
+            this.arCustNumber.TabIndex = 1;
+            this.arCustNumber.TextChanged += new System.EventHandler(this.arCustNumber_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Customer Number:";
+            // 
             // MetroToolsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -746,10 +746,10 @@
             this.customerExportLookup.ResumeLayout(false);
             this.customerExportLookup.PerformLayout();
             this.arStatementsTab.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
