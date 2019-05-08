@@ -34,7 +34,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("315")]
+        [global::System.Configuration.DefaultSettingValueAttribute("330")]
         public int _defaultFormWidth {
             get {
                 return ((int)(this["_defaultFormWidth"]));
@@ -52,7 +52,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("315")]
         public int _defaultTabWidth {
             get {
                 return ((int)(this["_defaultTabWidth"]));
@@ -118,7 +118,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("315")]
         public int _exportTabWidth {
             get {
                 return ((int)(this["_exportTabWidth"]));
@@ -136,7 +136,7 @@ namespace MetroTools.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("315")]
+        [global::System.Configuration.DefaultSettingValueAttribute("330")]
         public int _exportFormWidth {
             get {
                 return ((int)(this["_exportFormWidth"]));
