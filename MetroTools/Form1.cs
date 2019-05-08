@@ -23,6 +23,7 @@ namespace MetroTools
             openStandaloneInvoice.Enabled = false;
             ccCustLookupButton.Enabled = false;
             arExportBtn.Enabled = false;
+            resaleLookupBtn.Enabled = false;
             setDefaultDims();
             exportSavePath.Text = Properties.Settings.Default._exportSavePath;
             chkAutosaveExport.Checked = Properties.Settings.Default._exportAutosave;
@@ -44,7 +45,8 @@ namespace MetroTools
 
         private void MetroTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (MetroTabControl.SelectedIndex == MetroTabControl.TabPages.IndexOf(lastCreditCardTab))
+            if (MetroTabControl.SelectedIndex == MetroTabControl.TabPages.IndexOf(lastCreditCardTab)
+                || MetroTabControl.SelectedIndex == MetroTabControl.TabPages.IndexOf(resaleTab))
             {
                 this.Width = Properties.Settings.Default._ccFormWidth;
                 MetroTabControl.Width = Properties.Settings.Default._ccTabWidth;
@@ -196,6 +198,18 @@ namespace MetroTools
             Properties.Settings.Default._exportAutosave = chkAutosaveExport.Checked;
             Properties.Settings.Default._exportSavePath = exportSavePath.Text;
             Properties.Settings.Default.Save();
+        }
+
+        private void resaleLookupBtn_Click(object sender, EventArgs e)
+        {
+            resaleDataGridView.DataSource = Metro.Avalara.ExemptionLookup(resaleCustNum.Text);
+            resaleDataGridView.Sort(resaleDataGridView.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void resaleCustNum_TextChanged(object sender, EventArgs e)
+        {
+            if (resaleCustNum.TextLength >= 7) resaleLookupBtn.Enabled = true;
+            else resaleLookupBtn.Enabled = false;
         }
     }
 }

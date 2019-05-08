@@ -6,13 +6,13 @@
       <Value Profile="(Default)">400</Value>
     </Setting>
     <Setting Name="_defaultFormWidth" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">315</Value>
+      <Value Profile="(Default)">330</Value>
     </Setting>
     <Setting Name="_defaultTabHeight" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">365</Value>
     </Setting>
     <Setting Name="_defaultTabWidth" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">300</Value>
+      <Value Profile="(Default)">315</Value>
     </Setting>
     <Setting Name="_ccTabHeight" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">320</Value>
@@ -33,13 +33,13 @@
       <Value Profile="(Default)">415</Value>
     </Setting>
     <Setting Name="_exportTabWidth" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">300</Value>
+      <Value Profile="(Default)">315</Value>
     </Setting>
     <Setting Name="_exportFormHeight" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">450</Value>
     </Setting>
     <Setting Name="_exportFormWidth" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">315</Value>
+      <Value Profile="(Default)">330</Value>
     </Setting>
     <Setting Name="_exportSavePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

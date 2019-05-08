@@ -81,6 +81,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.arCustNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.resaleTab = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.resaleDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.resaleLookupBtn = new System.Windows.Forms.Button();
+            this.resaleCustNum = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.MetroTabControl.SuspendLayout();
             this.invoiceLookupTab.SuspendLayout();
             this.getInvoiceGroupBox.SuspendLayout();
@@ -100,6 +107,10 @@
             this.arStatementsTab.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.resaleTab.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resaleDataGridView)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // MetroTabControl
@@ -112,6 +123,7 @@
             this.MetroTabControl.Controls.Add(this.lastCreditCardTab);
             this.MetroTabControl.Controls.Add(this.custExportTab);
             this.MetroTabControl.Controls.Add(this.arStatementsTab);
+            this.MetroTabControl.Controls.Add(this.resaleTab);
             this.MetroTabControl.Location = new System.Drawing.Point(0, 0);
             this.MetroTabControl.MinimumSize = new System.Drawing.Size(300, 365);
             this.MetroTabControl.Multiline = true;
@@ -126,10 +138,10 @@
             this.invoiceLookupTab.Controls.Add(this.getInvoiceGroupBox);
             this.invoiceLookupTab.Controls.Add(this.invoiceListGroupBox);
             this.invoiceLookupTab.Controls.Add(this.lookupGroupBox);
-            this.invoiceLookupTab.Location = new System.Drawing.Point(4, 40);
+            this.invoiceLookupTab.Location = new System.Drawing.Point(4, 58);
             this.invoiceLookupTab.Name = "invoiceLookupTab";
             this.invoiceLookupTab.Padding = new System.Windows.Forms.Padding(3);
-            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 371);
+            this.invoiceLookupTab.Size = new System.Drawing.Size(292, 353);
             this.invoiceLookupTab.TabIndex = 0;
             this.invoiceLookupTab.Text = "Invoice Lookup";
             this.invoiceLookupTab.UseVisualStyleBackColor = true;
@@ -140,7 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.getInvoiceGroupBox.Controls.Add(this.openStandaloneInvoice);
             this.getInvoiceGroupBox.Controls.Add(this.invoiceNumberInput);
-            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 309);
+            this.getInvoiceGroupBox.Location = new System.Drawing.Point(6, 291);
             this.getInvoiceGroupBox.Name = "getInvoiceGroupBox";
             this.getInvoiceGroupBox.Size = new System.Drawing.Size(280, 50);
             this.getInvoiceGroupBox.TabIndex = 12;
@@ -182,7 +194,7 @@
             this.invoiceListGroupBox.Controls.Add(this.openInvoice);
             this.invoiceListGroupBox.Location = new System.Drawing.Point(6, 128);
             this.invoiceListGroupBox.Name = "invoiceListGroupBox";
-            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 175);
+            this.invoiceListGroupBox.Size = new System.Drawing.Size(280, 157);
             this.invoiceListGroupBox.TabIndex = 11;
             this.invoiceListGroupBox.TabStop = false;
             this.invoiceListGroupBox.Text = "Invoice LIst";
@@ -196,7 +208,7 @@
             this.invoiceList.Location = new System.Drawing.Point(6, 19);
             this.invoiceList.Name = "invoiceList";
             this.invoiceList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.invoiceList.Size = new System.Drawing.Size(165, 134);
+            this.invoiceList.Size = new System.Drawing.Size(165, 108);
             this.invoiceList.TabIndex = 6;
             // 
             // label2
@@ -301,10 +313,10 @@
             // openInvoiceTab
             // 
             this.openInvoiceTab.Controls.Add(this.pictureBox1);
-            this.openInvoiceTab.Location = new System.Drawing.Point(4, 40);
+            this.openInvoiceTab.Location = new System.Drawing.Point(4, 22);
             this.openInvoiceTab.Name = "openInvoiceTab";
             this.openInvoiceTab.Padding = new System.Windows.Forms.Padding(3);
-            this.openInvoiceTab.Size = new System.Drawing.Size(292, 371);
+            this.openInvoiceTab.Size = new System.Drawing.Size(292, 389);
             this.openInvoiceTab.TabIndex = 1;
             this.openInvoiceTab.Text = "Open Invoice Report";
             this.openInvoiceTab.UseVisualStyleBackColor = true;
@@ -323,9 +335,9 @@
             // 
             this.lastCreditCardTab.Controls.Add(this.ccLookupList);
             this.lastCreditCardTab.Controls.Add(this.groupBox1);
-            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 22);
+            this.lastCreditCardTab.Location = new System.Drawing.Point(4, 58);
             this.lastCreditCardTab.Name = "lastCreditCardTab";
-            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 389);
+            this.lastCreditCardTab.Size = new System.Drawing.Size(292, 353);
             this.lastCreditCardTab.TabIndex = 2;
             this.lastCreditCardTab.Text = "Last Credit Card";
             this.lastCreditCardTab.UseVisualStyleBackColor = true;
@@ -338,7 +350,7 @@
             this.ccLookupList.Controls.Add(this.ccDataGridView);
             this.ccLookupList.Location = new System.Drawing.Point(9, 103);
             this.ccLookupList.Name = "ccLookupList";
-            this.ccLookupList.Size = new System.Drawing.Size(274, 256);
+            this.ccLookupList.Size = new System.Drawing.Size(274, 238);
             this.ccLookupList.TabIndex = 1;
             this.ccLookupList.TabStop = false;
             this.ccLookupList.Text = "Last Credit Card List";
@@ -351,7 +363,7 @@
             this.ccDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ccDataGridView.Location = new System.Drawing.Point(8, 19);
             this.ccDataGridView.Name = "ccDataGridView";
-            this.ccDataGridView.Size = new System.Drawing.Size(260, 231);
+            this.ccDataGridView.Size = new System.Drawing.Size(260, 213);
             this.ccDataGridView.TabIndex = 0;
             // 
             // groupBox1
@@ -408,10 +420,10 @@
             this.custExportTab.Controls.Add(this.exportGroup);
             this.custExportTab.Controls.Add(this.dateRangeLookupGroup);
             this.custExportTab.Controls.Add(this.customerExportLookup);
-            this.custExportTab.Location = new System.Drawing.Point(4, 40);
+            this.custExportTab.Location = new System.Drawing.Point(4, 58);
             this.custExportTab.Name = "custExportTab";
             this.custExportTab.Padding = new System.Windows.Forms.Padding(3);
-            this.custExportTab.Size = new System.Drawing.Size(292, 371);
+            this.custExportTab.Size = new System.Drawing.Size(292, 353);
             this.custExportTab.TabIndex = 3;
             this.custExportTab.Text = "Customer History Export";
             this.custExportTab.UseVisualStyleBackColor = true;
@@ -428,7 +440,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(8, 240);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(278, 119);
+            this.groupBox2.Size = new System.Drawing.Size(278, 101);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
@@ -623,10 +635,10 @@
             // 
             this.arStatementsTab.Controls.Add(this.groupBox4);
             this.arStatementsTab.Controls.Add(this.groupBox3);
-            this.arStatementsTab.Location = new System.Drawing.Point(4, 40);
+            this.arStatementsTab.Location = new System.Drawing.Point(4, 58);
             this.arStatementsTab.Name = "arStatementsTab";
             this.arStatementsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.arStatementsTab.Size = new System.Drawing.Size(292, 371);
+            this.arStatementsTab.Size = new System.Drawing.Size(292, 353);
             this.arStatementsTab.TabIndex = 4;
             this.arStatementsTab.Text = "A/R Statements";
             this.arStatementsTab.UseVisualStyleBackColor = true;
@@ -711,6 +723,90 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Customer Number:";
             // 
+            // resaleTab
+            // 
+            this.resaleTab.Controls.Add(this.groupBox5);
+            this.resaleTab.Controls.Add(this.groupBox6);
+            this.resaleTab.Location = new System.Drawing.Point(4, 58);
+            this.resaleTab.Name = "resaleTab";
+            this.resaleTab.Padding = new System.Windows.Forms.Padding(3);
+            this.resaleTab.Size = new System.Drawing.Size(292, 353);
+            this.resaleTab.TabIndex = 5;
+            this.resaleTab.Text = "Resale Lookup";
+            this.resaleTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.resaleDataGridView);
+            this.groupBox5.Location = new System.Drawing.Point(9, 109);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(274, 238);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Resale Certificate List";
+            // 
+            // resaleDataGridView
+            // 
+            this.resaleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resaleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resaleDataGridView.Location = new System.Drawing.Point(6, 19);
+            this.resaleDataGridView.Name = "resaleDataGridView";
+            this.resaleDataGridView.Size = new System.Drawing.Size(260, 213);
+            this.resaleDataGridView.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.resaleLookupBtn);
+            this.groupBox6.Controls.Add(this.resaleCustNum);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Location = new System.Drawing.Point(8, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(275, 84);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Customer Lookup";
+            // 
+            // resaleLookupBtn
+            // 
+            this.resaleLookupBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.resaleLookupBtn.Location = new System.Drawing.Point(194, 50);
+            this.resaleLookupBtn.Name = "resaleLookupBtn";
+            this.resaleLookupBtn.Size = new System.Drawing.Size(75, 23);
+            this.resaleLookupBtn.TabIndex = 2;
+            this.resaleLookupBtn.Text = "Ok";
+            this.resaleLookupBtn.UseVisualStyleBackColor = true;
+            this.resaleLookupBtn.Click += new System.EventHandler(this.resaleLookupBtn_Click);
+            // 
+            // resaleCustNum
+            // 
+            this.resaleCustNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resaleCustNum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.resaleCustNum.Location = new System.Drawing.Point(103, 24);
+            this.resaleCustNum.MaxLength = 10;
+            this.resaleCustNum.Name = "resaleCustNum";
+            this.resaleCustNum.Size = new System.Drawing.Size(166, 20);
+            this.resaleCustNum.TabIndex = 1;
+            this.resaleCustNum.TextChanged += new System.EventHandler(this.resaleCustNum_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Customer Number:";
+            // 
             // MetroToolsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,6 +846,11 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.resaleTab.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resaleDataGridView)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -808,6 +909,13 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox arCustNumber;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage resaleTab;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView resaleDataGridView;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button resaleLookupBtn;
+        private System.Windows.Forms.TextBox resaleCustNum;
+        private System.Windows.Forms.Label label8;
     }
 }
 
