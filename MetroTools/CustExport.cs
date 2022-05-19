@@ -101,6 +101,7 @@ namespace MetroTools
                 {
                     _invoiceToTrack itr = new _invoiceToTrack();
                     itr.disty = comparatorTable.Rows[i][(int)ReferenceColumn.Disty].ToString();
+                    itr.docDate = Convert.ToDateTime(comparatorTable.Rows[i][(int)ReferenceColumn.Date]);
                     itr.poNumber = comparatorTable.Rows[i][(int)ReferenceColumn.PONumber].ToString();
                     itr.invoiceNum = invoiceNum;
                     itr.quantity = Convert.ToInt32(comparatorTable.Rows[i][(int)ReferenceColumn.Quantity]);
@@ -124,6 +125,7 @@ namespace MetroTools
                     DataRow ndr = initialTable.NewRow();
 
                     ndr[(int)ExcelColumn.Disty] = lookupInvoices[i].disty;
+                    ndr[(int)ExcelColumn.Date] = lookupInvoices[i].docDate;
                     ndr[(int)ExcelColumn.PONumber] = lookupInvoices[i].poNumber;
                     ndr[(int)ExcelColumn.InvoiceNumber] = lookupInvoices[i].invoiceNum;
                     ndr[(int)ExcelColumn.Quantity] = lookupInvoices[i].quantity;
@@ -145,6 +147,7 @@ namespace MetroTools
         private enum ReferenceColumn
         {
             Disty,
+            Date,
             PONumber,
             InvoiceNumber,
             Quantity,
@@ -158,6 +161,7 @@ namespace MetroTools
         private enum ExcelColumn
         {
             Disty,
+            Date,
             PONumber,
             InvoiceNumber,
             Quantity,
@@ -173,6 +177,7 @@ namespace MetroTools
         private struct _invoiceToTrack
         {
             public string disty;
+            public DateTime docDate;
             public string poNumber;
             public string invoiceNum;
             public int quantity;

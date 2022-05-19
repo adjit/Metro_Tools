@@ -204,6 +204,16 @@ namespace MetroTools
         {
             resaleDataGridView.DataSource = Metro.Avalara.ExemptionLookup(resaleCustNum.Text);
             resaleDataGridView.Sort(resaleDataGridView.Columns[0], ListSortDirection.Ascending);
+            
+            foreach(DataGridViewRow row in resaleDataGridView.Rows)
+            {
+                object expireValue = row.Cells[2].Value;
+
+                if(expireValue != null && (DateTime)expireValue < DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Orange;
+                }
+            }
         }
 
         private void resaleCustNum_TextChanged(object sender, EventArgs e)
