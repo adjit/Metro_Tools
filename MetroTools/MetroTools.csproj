@@ -24,8 +24,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Metro Tools</ProductName>
     <PublisherName>Metropolitan Sales</PublisherName>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.6.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.7.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -53,10 +53,10 @@
     <ApplicationIcon>MetMW.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1DB949197F815ED4DBAC4537D0212BD51D991052</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E88500E46FF8DE7CA397E7D72E7C0BA72448C0B8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MetroTools_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MetroTools_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -65,9 +65,6 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Avalara.AvaTax.RestClient.net45, Version=19.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Avalara.AvaTax.19.3.0\lib\net45\Avalara.AvaTax.RestClient.net45.dll</HintPath>
-    </Reference>
     <Reference Include="Metro">
       <HintPath>..\..\OpenInvoice\OpenInvoice\bin\Debug\Metro.dll</HintPath>
     </Reference>
@@ -117,6 +114,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="MetroTools_1_TemporaryKey.pfx" />
+    <None Include="MetroTools_2_TemporaryKey.pfx" />
+    <None Include="MetroTools_3_TemporaryKey.pfx" />
     <None Include="MetroTools_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

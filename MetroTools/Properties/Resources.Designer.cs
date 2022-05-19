@@ -108,6 +108,7 @@ namespace MetroTools.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Select
         ///	&apos;Metsales&apos; as &apos;Distributor&apos;,
+        ///	th.DOCDATE,
         ///	th.CSTPONBR as &apos;PO&apos;,
         ///	tr.SOPNUMBE as &apos;Invoice Number&apos;,
         ///	tr.QUANTITY as &apos;Qty&apos;,
@@ -124,7 +125,7 @@ namespace MetroTools.Properties {
         ///	StarShip.dbo.ShipmentHeaderView shv,
         ///	Metro.dbo.SOP30300 tr
         ///
-        ///	Left Join Metr [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string custExportQuery {
             get {
@@ -135,6 +136,7 @@ namespace MetroTools.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Select
         ///	&apos;Metsales&apos; as &apos;Distributor&apos;,
+        ///	th.DOCDATE,
         ///	th.CSTPONBR as &apos;PO&apos;,
         ///	tr.SOPNUMBE,
         ///	tr.QUANTITY as &apos;Qty&apos;,

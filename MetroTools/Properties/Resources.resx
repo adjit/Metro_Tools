@@ -152,6 +152,7 @@ ORDER BY LS.DOCDATE DESC</value>
   <data name="custExportQuery" xml:space="preserve">
     <value>Select
 	'Metsales' as 'Distributor',
+	th.DOCDATE,
 	th.CSTPONBR as 'PO',
 	tr.SOPNUMBE as 'Invoice Number',
 	tr.QUANTITY as 'Qty',
@@ -187,6 +188,7 @@ Order By [Invoice Number]</value>
   <data name="custReferenceExportQuery" xml:space="preserve">
     <value>Select
 	'Metsales' as 'Distributor',
+	th.DOCDATE,
 	th.CSTPONBR as 'PO',
 	tr.SOPNUMBE,
 	tr.QUANTITY as 'Qty',
