@@ -12,7 +12,7 @@ namespace MetroTools.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -164,6 +164,83 @@ namespace MetroTools.Properties {
             }
             set {
                 this["_exportAutosave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\METSALES-FILE\\Metropolitan Sales Docs\\1-Deployment\\dbConnect\\dbConnection")]
+        public string DBCONNECTION_STRING {
+            get {
+                return ((string)(this["DBCONNECTION_STRING"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\METSALES-GP\\Dynamics\\MESSNGER\\Archive")]
+        public string INVOICE_ARCHIVE {
+            get {
+                return ((string)(this["INVOICE_ARCHIVE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\METSALES-GP\\Dynamics\\MESSNGER\\")]
+        public string INVOICE_FILEPATH {
+            get {
+                return ((string)(this["INVOICE_FILEPATH"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9D66C48E88146328")]
+        public string AVALARA_KEY {
+            get {
+                return ((string)(this["AVALARA_KEY"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\METRO-GP1\\Dynamics\\MESSNGER\\")]
+        public string INVOICE_FALLBACK {
+            get {
+                return ((string)(this["INVOICE_FALLBACK"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000099535")]
+        public string AVALARA_ACCOUNT_ID {
+            get {
+                return ((string)(this["AVALARA_ACCOUNT_ID"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Metropolitan Sales Distributors, Inc.")]
+        public string AVALARA_ACCOUNT_NAME {
+            get {
+                return ((string)(this["AVALARA_ACCOUNT_NAME"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsd=\"http://www.w3." +
+            "org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <s" +
+            "tring>RS1085;BlueStone Restaurant Systems Ltd.</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection _groupMembers {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["_groupMembers"]));
+            }
+            set {
+                this["_groupMembers"] = value;
             }
         }
     }

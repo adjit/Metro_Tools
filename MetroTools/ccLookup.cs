@@ -14,8 +14,9 @@ namespace MetroTools
 
         public ccLookup(string custNum)
         {
-            sqlLookup slp = new sqlLookup(string.Format(Properties.Resources.ccQuery, custNum));
-            _data = slp.getDataTable();
+            string query = string.Format(Properties.Resources.ccQuery, custNum);
+            sqlLookup slp = new sqlLookup();
+            _data = slp.Query(query);
 
             if(_data.Rows.Count == 0)
             {

@@ -22,7 +22,8 @@ namespace MetroTools
 
             progress.Report(5);
 
-            DataTable dti = Database.sqlLookup(query);
+            var slp = new sqlLookup();
+            DataTable dti = slp.Query(query);
 
             progress.Report(5);
 

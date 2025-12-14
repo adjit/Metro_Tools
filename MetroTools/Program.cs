@@ -15,6 +15,7 @@ namespace MetroTools
         [STAThread]
         static void Main(string[] args)
         {
+            Console.WriteLine("Args - " + args.Length);
             if (args.Length == 0)
             {
                 Application.EnableVisualStyles();

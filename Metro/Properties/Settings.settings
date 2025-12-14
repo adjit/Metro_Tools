@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Metro.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBCONNECTION_STRING" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\METSALES-FILE\Metropolitan Sales Docs\1-Deployment\dbConnect\dbConnection</Value>
+    </Setting>
+    <Setting Name="INVOICE_ARCHIVE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\METSALES-GP\Dynamics\MESSNGER\Archive</Value>
+    </Setting>
+    <Setting Name="INVOICE_FILEPATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\METSALES-GP\Dynamics\MESSNGER\</Value>
+    </Setting>
+    <Setting Name="AVALARA_KEY" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9D66C48E88146328</Value>
+    </Setting>
+    <Setting Name="INVOICE_FALLBACK" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\METRO-GP1\Dynamics\MESSNGER\</Value>
+    </Setting>
+    <Setting Name="AVALARA_ACCOUNT_ID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2000099535</Value>
+    </Setting>
+    <Setting Name="AVALARA_ACCOUNT_NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Metropolitan Sales Distributors, Inc.</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

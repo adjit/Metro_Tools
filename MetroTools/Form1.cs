@@ -10,13 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Metro;
+using Metro.Core;
+using Metro.Core.Infrastructure;
 
 
 namespace MetroTools
 {
     public partial class MetroToolsForm : Form
     {
+        private GeneralConfigOptions _opts = new GeneralConfigOptions();
         public MetroToolsForm()
         {
             InitializeComponent();
@@ -27,7 +29,16 @@ namespace MetroTools
             setDefaultDims();
             exportSavePath.Text = Properties.Settings.Default._exportSavePath;
             chkAutosaveExport.Checked = Properties.Settings.Default._exportAutosave;
-            MetroTabControl.TabPages.Remove(openInvoiceTab);
+            //MetroTabControl.TabPages.Remove(openInvoiceTab);
+
+            var settings = Properties.Settings.Default;
+            _opts.DBConnectionString = settings.DBCONNECTION_STRING;
+            _opts.InvoiceFilePath = settings.INVOICE_FILEPATH;
+            _opts.InvoiceArchive = settings.INVOICE_ARCHIVE;
+            _opts.InvoiceFallback = settings.INVOICE_FALLBACK;
+            _opts.AvalaraAccountId = settings.AVALARA_ACCOUNT_ID;
+            _opts.AvalaraAccountName = settings.AVALARA_ACCOUNT_NAME;
+            _opts.AvalaraKey = settings.AVALARA_KEY;
         }
 
         private void ccCustLookupButton_Click(object sender, EventArgs e)
@@ -97,7 +108,7 @@ namespace MetroTools
                 return;
             }
 
-            InvoiceLookup ilp = new InvoiceLookup(query);
+            InvoiceLookup ilp = new InvoiceLookup(query, _opts);
             string[] invoices = ilp.getInvoiceNumbers();
 
             if (invoices.Length == 0) invoiceList.Items.Add("No Invoices Found");
@@ -122,14 +133,14 @@ namespace MetroTools
 
         private void openStandaloneInvoice_Click(object sender, EventArgs e)
         {
-            Invoices.Open(invoiceNumberInput.Text);
+            InvoiceWrapper.Open(invoiceNumberInput.Text, _opts);
         }
 
         private void openInvoice_Click(object sender, EventArgs e)
         {
             ListBox.SelectedObjectCollection soc = invoiceList.SelectedItems;
 
-            for (int i = 0; i < soc.Count; i++) Invoices.Open(soc[i].ToString());
+            for (int i = 0; i < soc.Count; i++) InvoiceWrapper.Open(soc[i].ToString(), _opts);
         }
 
         private void ccCustomerNumber_TextChanged(object sender, EventArgs e)
@@ -202,14 +213,47 @@ namespace MetroTools
 
         private void resaleLookupBtn_Click(object sender, EventArgs e)
         {
-            resaleDataGridView.DataSource = Metro.Avalara.ExemptionLookup(resaleCustNum.Text);
+            DataTable responseTable = new DataTable();
+            bool isError = false;
+
+            try
+            {
+                responseTable = Metro.Core.Avalara.ExemptionLookup(resaleCustNum.Text, _opts);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to get certificates from Avalara. {ex.Message}\n {ex.StackTrace}");
+                responseTable.Columns.Add("ERROR");
+                responseTable.Rows.Add(new object[] { "ERROR : Cannot connect to Avalara" });
+                isError = true;
+            }
+
+            resaleDataGridView.DataSource = responseTable;
+            
+            if (isError) return;
+
             resaleDataGridView.Sort(resaleDataGridView.Columns[0], ListSortDirection.Ascending);
+            foreach (DataGridViewRow row in resaleDataGridView.Rows)
+            {
+
+                var expiration = (DateTime?)row.Cells[2].Value;
+
+                if(expiration < DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Orange;
+                }
+            }
         }
 
         private void resaleCustNum_TextChanged(object sender, EventArgs e)
         {
             if (resaleCustNum.TextLength >= 7) resaleLookupBtn.Enabled = true;
             else resaleLookupBtn.Enabled = false;
+        }
+
+        private void runQueryButton_Click(object sender, EventArgs e)
+        {
+            epsonExport.ExportEpsonPosReport(monthPicker.Value);
         }
     }
 }
