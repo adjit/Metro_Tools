@@ -19,8 +19,6 @@ namespace MetroTools
             int month = date.Month;
             int year = date.Year;
 
-            qRow thisRow;
-
             Properties.Settings s = Properties.Settings.Default;
 
             for (int i = 0; i < s._groupMembers.Count; i++)
