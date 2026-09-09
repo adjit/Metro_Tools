@@ -13,6 +13,7 @@ namespace MetroTools
         private static string _custNumber;
         private static DateTime _startDate;
         private static DateTime _endDate;
+        private static sqlLookup _sql = new sqlLookup();
 
         public static void ExportCustomer(string custNumber, DateTime startDate, DateTime endDate)
         {
@@ -27,8 +28,8 @@ namespace MetroTools
             initialQuery = string.Format(initialQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
             comparatorQuery = string.Format(comparatorQuery, _custNumber, _startDate.ToShortDateString(), _endDate.ToShortDateString());
 
-            DataTable dti = Database.sqlLookup(initialQuery);
-            DataTable dtc = Database.sqlLookup(comparatorQuery);
+            DataTable dti = _sql.Query(initialQuery);
+            DataTable dtc = _sql.Query(comparatorQuery);
 
             _export(_fillInCompare(dti, dtc));
 
@@ -50,11 +51,11 @@ namespace MetroTools
 
             progress.Report(20);
 
-            DataTable dti = Database.sqlLookup(initialQuery);
+            DataTable dti = _sql.Query(initialQuery);
 
             progress.Report(30);
 
-            DataTable dtc = Database.sqlLookup(comparatorQuery);
+            DataTable dtc = _sql.Query(comparatorQuery);
 
             progress.Report(40);
 
@@ -118,7 +119,7 @@ namespace MetroTools
             {
                 string itrxQuery = String.Format(Properties.Resources.invoiceTrxQuery, lookupInvoices[i].invoiceNum);
 
-                trackingTable = Database.sqlLookup(itrxQuery);
+                trackingTable = _sql.Query(itrxQuery);
 
                 if(trackingTable.Rows.Count > 0)
                 {

@@ -14,40 +14,55 @@ namespace MetroTools
     {
         private SqlConnection dbConnection;
         private SqlCommand cmd;
-        private DataTable _data;
-        public String Query { get; }
 
-        public sqlLookup(string query)
+        public sqlLookup()
         {
             string connection;
 
             try
             {
-                connection = System.IO.File.ReadAllText(@"\\METRO-FILE1\Metropolitan Sales Docs\1-Deployment\dbConnect\dbConnection");
+                connection = System.IO.File.ReadAllText(Properties.Settings.Default.DBCONNECTION_STRING);
             }
             catch (Exception e)
             {
-                System.Windows.Forms.MessageBox.Show("Unable to get connection string for database.");
+                System.Windows.Forms.MessageBox.Show($"Unable to get connection string for database. {e.Message}");
                 return;
             }
 
             dbConnection = new SqlConnection(connection);
-            Query = query;
-
-            dbConnection.Open();
-
-            cmd = new SqlCommand(Query, dbConnection);
-            
-            cmd.CommandType = CommandType.Text;
-            _data = new DataTable();
-            _data.Load(cmd.ExecuteReader());
-
-            dbConnection.Close();
         }
 
-        public DataTable getDataTable()
+        public DataTable Query(string query)
         {
-            return _data;
+            if (dbConnection != null)
+            {
+                try
+                {
+                    dbConnection.Open();
+
+                    cmd = new SqlCommand(query, dbConnection);
+
+                    cmd.CommandType = CommandType.Text;
+                    var _data = new DataTable();
+                    _data.Load(cmd.ExecuteReader());
+                    return _data;
+                }
+                catch (Exception e)
+                {
+                    System.Windows.Forms.MessageBox.Show(e.Message);
+                    dbConnection.Close();
+                }
+                finally
+                {
+                    dbConnection.Close();
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("No database connection established.");
+            }
+
+            return new DataTable();
         }
     }
 }

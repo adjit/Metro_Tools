@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Metro;
+using Metro.Core;
+using Metro.Core.Infrastructure;
 
 namespace MetroTools
 {
@@ -12,11 +13,14 @@ namespace MetroTools
     {
         private DataTable _data;
         private string[] _invoiceNumbers;
+        private GeneralConfigOptions _opts;
 
-        public InvoiceLookup(string query)
+        public InvoiceLookup(string query, GeneralConfigOptions opts)
         {
-            sqlLookup slp = new sqlLookup(query);
-            _data = slp.getDataTable();
+            _opts = opts;
+
+            sqlLookup slp = new sqlLookup();
+            _data = slp.Query(query);
 
             _invoiceNumbers = new string[_data.Rows.Count];
         }
@@ -32,12 +36,12 @@ namespace MetroTools
 
         public void openInvoice(string invoiceNum)
         {
-            Invoices.Open(invoiceNum);
+            InvoiceWrapper.Open(invoiceNum, _opts);
         }
 
         public void openInvoices(string[] invoiceNumbers)
         {
-            Invoices.Open(invoiceNumbers);
+            InvoiceWrapper.Open(invoiceNumbers, _opts);
         }
 
     }

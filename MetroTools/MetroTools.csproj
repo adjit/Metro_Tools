@@ -8,14 +8,15 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MetroTools</RootNamespace>
     <AssemblyName>MetroTools</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\METRO-FILE1\Metropolitan Sales Docs\1-Deployment\Metro_Tools\</PublishUrl>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\Adjit\Projects\metsales\1-Deployment-2026\Metro_Tools\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -24,8 +25,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Metro Tools</ProductName>
     <PublisherName>Metropolitan Sales</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.7.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -53,10 +54,11 @@
     <ApplicationIcon>MetMW.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E88500E46FF8DE7CA397E7D72E7C0BA72448C0B8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>3CC4DA8F0F8E8B9A35F6C8C88B03D7A9F39F031E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MetroTools_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -65,14 +67,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Metro">
-      <HintPath>..\..\OpenInvoice\OpenInvoice\bin\Debug\Metro.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,6 +89,7 @@
     <Compile Include="arExport.cs" />
     <Compile Include="ccLookup.cs" />
     <Compile Include="CustExport.cs" />
+    <Compile Include="epsonExport.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +97,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="InvoiceLookup.cs" />
+    <Compile Include="InvoiceWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqlLookup.cs" />
@@ -153,6 +154,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenInvoice\OpenInvoice\Metro.csproj">
+      <Project>{38ee3824-add9-422d-9f4b-875b8e6ce1b3}</Project>
+      <Name>Metro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Metro.Core\Metro.Core.csproj">
+      <Project>{24d3208b-ceea-4d58-8dc0-7bc0e199b8ea}</Project>
+      <Name>Metro.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

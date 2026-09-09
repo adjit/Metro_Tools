@@ -19,7 +19,7 @@ namespace MetroTools.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -165,6 +165,28 @@ namespace MetroTools.Properties {
         internal static string custReferenceExportQuery {
             get {
                 return ResourceManager.GetString("custReferenceExportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT
+        ///	&apos;0-004-4060-000&apos; AS [Epson COGS],
+        ///	header.CUSTNMBR AS [Customer No],
+        ///	isnull(enVisionNumber.ResellerNo, &apos;&apos;) AS [Reseller No],
+        ///	header.CUSTNAME AS [Reseller Name],
+        ///	header.CNTCPRSN AS [End User Name],
+        ///	header.ACTLSHIP AS [Invoice Date],
+        ///	header.SOPNUMBE AS [Invoice No.],
+        ///	isnull(gpItems.VNDITNUM, lineItems.ITEMNMBR) AS [Part],
+        ///	lineItems.ITEMNMBR AS [Item Number],
+        ///	serialTable.CMMTTEXT AS [Serial No.],
+        ///	lineItems.QTYFULFI AS [Units],
+        ///	header.SLPRSNID AS [SALESREPID],
+        ///	custMaster.ADDRESS1 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string epsonQuery {
+            get {
+                return ResourceManager.GetString("epsonQuery", resourceCulture);
             }
         }
         
